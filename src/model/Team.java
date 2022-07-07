@@ -47,5 +47,7 @@ public class Team {
 	public void setMatchGoalsAverage(int matchGoalsAverage) {
 		this.matchGoalsAverage = matchGoalsAverage;
 	}
+	
+	
 
 }
