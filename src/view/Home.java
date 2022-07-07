@@ -2,6 +2,8 @@ package view;
 
 import java.util.Scanner;
 
+import controller.MainControl;
+
 public class Home {
 
 	public static void main(String[] args) {
@@ -22,7 +24,8 @@ public class Home {
 				switch (option) {
 
 				case 1:
-					System.out.println("1");
+					System.out.println("Importando partidas...");
+					MainControl.importMatches();
 					break;
 
 				case 2:
