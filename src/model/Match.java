@@ -1,6 +1,6 @@
 package model;
 
-public class Matches {
+public class Match {
 
 	Team homeTeam;
 	Team awayTeam;
