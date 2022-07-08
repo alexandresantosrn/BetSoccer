@@ -17,11 +17,27 @@ public class MainControl {
 		
 		try {
 			FileReader file = new FileReader(name);
-			BufferedReader readFile = new BufferedReader(file);
+			BufferedReader readingFile = new BufferedReader(file);
 			
-			String line = readFile.readLine();	
+			String line = readingFile.readLine();				
 			
-			System.out.println(line);
+			while (line != null) {
+				
+				String[] vect = line.split(";");
+				
+				String home = vect[0];
+				String away = vect[3];				
+				
+				System.out.println(home);
+				System.out.println(away);
+				
+				createTeams(home);
+				createTeams(away);
+				
+				line = readingFile.readLine();
+			}
+			
+			readingFile.close();
 			
 		} catch (FileNotFoundException e) {
 			System.err.println("Erro na leitura do arquivo!");			
@@ -38,5 +54,12 @@ public class MainControl {
 		
 		
 	}
+	
+	public static void createTeams(String team) {
+		
+		
+	}
+	
+	
 
 }
