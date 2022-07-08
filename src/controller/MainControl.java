@@ -1,7 +1,9 @@
 package controller;
 
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class MainControl {
@@ -15,9 +17,18 @@ public class MainControl {
 		
 		try {
 			FileReader file = new FileReader(name);
+			BufferedReader readFile = new BufferedReader(file);
+			
+			String line = readFile.readLine();	
+			
+			System.out.println(line);
 			
 		} catch (FileNotFoundException e) {
 			System.err.println("Erro na leitura do arquivo!");			
+			//e.printStackTrace();
+			
+		} catch (IOException e) {
+			System.err.println("Problema na leitura dos dados!");
 			//e.printStackTrace();
 		}		
 		
