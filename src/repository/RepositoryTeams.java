@@ -12,8 +12,22 @@ public class RepositoryTeams {
 	public void addTeam(Team team) {
 
 		teams.add(team);
-		System.out.println("Clube adicionado com sucesso!!");
+		System.out.println("Clube adicionado com sucesso!!"+team.getName());
 
 	}
 
+	public boolean hastTeambyName(String name) {
+		
+		boolean exist = false;
+		
+		for (Team team: teams) {
+			
+			if(team.getName().equals(name) ) {
+				
+				exist = true;
+			}
+		}
+		
+		return exist;
+	}
 }

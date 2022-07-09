@@ -16,8 +16,8 @@ public class ImportTeams {
 			FileReader file = new FileReader(name);
 			BufferedReader readingFile = new BufferedReader(file);
 
-			String line = readingFile.readLine();		
-			
+			String line = readingFile.readLine();
+
 			line = readingFile.readLine();
 
 			while (line != null) {
@@ -26,7 +26,7 @@ public class ImportTeams {
 
 				String home = vect[0];
 				String away = vect[3];
-				
+
 				createTeam(home);
 				createTeam(away);
 
@@ -46,14 +46,25 @@ public class ImportTeams {
 	}
 
 	private static void createTeam(String name) {
-		
-		Team team = new Team();
-		team.setName(name);
-		
+
+		boolean exists = false;
+
 		RepositoryTeams repository = new RepositoryTeams();
-		
-		repository.addTeam(team);
-		
+
+		exists = repository.hastTeambyName(name);
+
+		if (!exists) {
+
+			Team team = new Team();
+			team.setName(name);
+
+			repository.addTeam(team);
+		}
+
+		else {
+
+			System.err.println("Clube já adicionado!!");
+		}
 	}
 
 }
