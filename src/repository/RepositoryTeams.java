@@ -7,7 +7,13 @@ import model.Team;
 
 public class RepositoryTeams {
 
-	List<Team> repositoryTeams = new ArrayList<Team>();
-	
-	
+	List<Team> teams = new ArrayList<Team>();
+
+	public void addTeam(Team team) {
+
+		teams.add(team);
+		System.out.println("Clube adicionado com sucesso!!");
+
+	}
+
 }

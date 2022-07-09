@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import model.Team;
+import repository.RepositoryTeams;
 
 public class ImportTeams {
 
@@ -47,7 +48,11 @@ public class ImportTeams {
 	private static void createTeam(String name) {
 		
 		Team team = new Team();
-		team.setName(name);	
+		team.setName(name);
+		
+		RepositoryTeams repository = new RepositoryTeams();
+		
+		repository.addTeam(team);
 		
 	}
 
