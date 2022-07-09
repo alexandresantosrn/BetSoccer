@@ -7,18 +7,22 @@ import java.io.IOException;
 import java.util.Scanner;
 
 import imports.ImportLeague;
+import imports.ImportTeams;
 
 public class MainControl {
 	
-	public static void importMatches() {
+	
+			
+	public static void importMatches() {		
 		
-		Scanner in = new Scanner(System.in);
+		final String path = "/home/bzaum/teste.txt";
 		
-		System.out.print("Informe o caminho do arquivo: ");
-		String name = in.nextLine();
+		System.out.println("Importando o caminho do arquivo...");
+				
+		ImportLeague.importLeague(path);
 		
-		ImportLeague.importLeague(name);
-		
+		ImportTeams.importTeams(path);		
+
 		/*
 		try {
 			FileReader file = new FileReader(name);

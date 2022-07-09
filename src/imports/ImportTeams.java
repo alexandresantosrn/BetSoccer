@@ -5,25 +5,33 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-import model.League;
+import model.Team;
 
-public class ImportLeague {
+public class ImportTeams {
 
-	public static void importLeague(String name) {
+	public static void importTeams(String name) {
 
 		try {
 			FileReader file = new FileReader(name);
 			BufferedReader readingFile = new BufferedReader(file);
 
-			String line = readingFile.readLine();
-
-			String[] vect = line.split(";");
-
-			String country = vect[0];
-			String leagueName = vect[1];
+			String line = readingFile.readLine();		
 			
-			createLeague(country,leagueName);
-			
+			line = readingFile.readLine();
+
+			while (line != null) {
+
+				String[] vect = line.split(";");
+
+				String home = vect[0];
+				String away = vect[3];
+				
+				createTeam(home);
+				createTeam(away);
+
+				line = readingFile.readLine();
+			}
+
 			readingFile.close();
 
 		} catch (FileNotFoundException e) {
@@ -36,9 +44,11 @@ public class ImportLeague {
 
 	}
 
-	private static void createLeague(String country, String leagueName) {
+	private static void createTeam(String name) {
 		
-		new League(country, leagueName);		
+		Team team = new Team();
+		team.setName(name);	
+		
 	}
 
 }

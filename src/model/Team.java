@@ -6,7 +6,7 @@ public class Team {
 	int matches;
 	int matchGoals;
 	int matchGoalsFor;
-	int matchGoalsAverage;
+	int matchGoalsAverage;	
 
 	public String getName() {
 		return name;

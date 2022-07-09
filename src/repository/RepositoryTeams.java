@@ -8,4 +8,6 @@ import model.Team;
 public class RepositoryTeams {
 
 	List<Team> repositoryTeams = new ArrayList<Team>();
+	
+	
 }
