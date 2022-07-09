@@ -6,6 +6,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
+import imports.ImportLeague;
+
 public class MainControl {
 	
 	public static void importMatches() {
@@ -15,6 +17,9 @@ public class MainControl {
 		System.out.print("Informe o caminho do arquivo: ");
 		String name = in.nextLine();
 		
+		ImportLeague.importLeague(name);
+		
+		/*
 		try {
 			FileReader file = new FileReader(name);
 			BufferedReader readingFile = new BufferedReader(file);
@@ -46,7 +51,7 @@ public class MainControl {
 		} catch (IOException e) {
 			System.err.println("Problema na leitura dos dados!");
 			//e.printStackTrace();
-		}		
+		}		*/
 		
 	}
 	
@@ -55,10 +60,7 @@ public class MainControl {
 		
 	}
 	
-	public static void createTeams(String team) {
-		
-		
-	}
+
 	
 	
 
