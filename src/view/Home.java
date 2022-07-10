@@ -1,12 +1,13 @@
 package view;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 import controller.MainControl;
 
 public class Home {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 
 		int option = 100;
 
