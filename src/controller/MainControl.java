@@ -61,7 +61,7 @@ public class MainControl {
 			String home = vect[0];
 			String away = vect[3];
 
-			createTeam(home);
+			createMatch(home);
 			createTeam(away);
 
 			line = readingFile.readLine();
@@ -104,15 +104,24 @@ public class MainControl {
 			String[] vect = line.split(";");
 
 			String home = vect[0];
+			String gfHome = vect[1];
+			String gfAway = vect[2];
 			String away = vect[3];
 
-			createTeam(home);
-			createTeam(away);
-
+			createMatch(home, away, gfHome, gfAway);
+			
 			line = readingFile.readLine();
 		}
 
 		readingFile.close();
+	}
+
+	private static void createMatch(String home, String away, String gfHome, String gfAway) {
+		
+		
+			
+		}
+		
 	}
 
 	public static void exportMatches() {
