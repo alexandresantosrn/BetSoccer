@@ -13,9 +13,9 @@ import repository.RepositoryTeams;
 public class MainControl {
 
 	static RepositoryTeams repository = new RepositoryTeams();
-	
+
 	static RepositoryLeagues repositoryl = new RepositoryLeagues();
-		
+
 	public static void importMatches() throws IOException {
 
 		final String path = "/home/bzaum/teste.txt";
@@ -24,7 +24,7 @@ public class MainControl {
 
 		importLeague(path);
 		importTeams(path);
-		//importGames(path);
+		// importGames(path);
 	}
 
 	private static void importLeague(String path) throws IOException {
@@ -39,7 +39,7 @@ public class MainControl {
 		String leagueName = vect[1];
 
 		League league = new League(country, leagueName);
-		
+
 		repositoryl.addLeague(league);
 
 		readingFile.close();
@@ -61,7 +61,7 @@ public class MainControl {
 			String home = vect[0];
 			String away = vect[3];
 
-			createMatch(home);
+			createTeam(home);
 			createTeam(away);
 
 			line = readingFile.readLine();
@@ -109,7 +109,7 @@ public class MainControl {
 			String away = vect[3];
 
 			createMatch(home, away, gfHome, gfAway);
-			
+
 			line = readingFile.readLine();
 		}
 
@@ -117,12 +117,14 @@ public class MainControl {
 	}
 
 	private static void createMatch(String home, String away, String gfHome, String gfAway) {
-		
-		
-			
-		}
-		
+
+		Team team1 = repository.searchTeam(home);
+		Team team2 = repository.searchTeam(away);
+
+		team1.setMatches();
 	}
+
+	
 
 	public static void exportMatches() {
 
