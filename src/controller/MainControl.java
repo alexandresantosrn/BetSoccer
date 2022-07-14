@@ -120,8 +120,7 @@ public class MainControl {
 
 		Team team1 = repository.searchTeam(home);
 		Team team2 = repository.searchTeam(away);
-
-		team1.setMatches();
+		
 	}
 
 	
