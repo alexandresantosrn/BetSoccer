@@ -24,7 +24,7 @@ public class MainControl {
 
 		importLeague(path);
 		importTeams(path);
-		// importGames(path);
+		importGames(path);
 	}
 
 	private static void importLeague(String path) throws IOException {
@@ -121,9 +121,11 @@ public class MainControl {
 		Team team1 = repository.searchTeam(home);
 		Team team2 = repository.searchTeam(away);
 		
-	}
+		team1.setMatches(team1.getMatches()+1);
+		team1.setMatchGoals(0);
+		
 
-	
+	}
 
 	public static void exportMatches() {
 
