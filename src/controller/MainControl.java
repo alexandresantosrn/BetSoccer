@@ -1,7 +1,6 @@
 package controller;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -122,8 +121,9 @@ public class MainControl {
 		Team team2 = repository.searchTeam(away);
 		
 		team1.setMatches(team1.getMatches()+1);
-		team1.setMatchGoals(0);
-		
+		team1.setMatchesHome(team1.getMatchesHome()+1);
+		team1.setTotalgoals(team1.getTotalgoals()+Integer.parseInt(gfHome)+Integer.parseInt(gfAway));	
+		team1.setAvgGoals(team1.getTotalgoals()/team1.getMatches());		
 
 	}
 
