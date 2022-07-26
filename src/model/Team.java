@@ -7,11 +7,19 @@ public class Team {
 	int matchesHome;
 	int matchesAway;
 	int totalgoals;
-	int goalsFor;
-	int goalsAverage;
+	int totalgoalsFor;
+	int totalgoalsAverage;
+	int totalgoalsForHome;
+	int totalgoalsAverageHome;
+	int totalgoalsForAway;
+	int totalgoalsAverageAway;
 	double avgGoals;
 	double avgGoalsFor;
 	double avgGoalsAverage;
+	double avgGoalsForHome;
+	double avgGoalsAverageHome;
+	double avgGoalsForAway;
+	double avgGoalsAverageAway;
 	double over15total;
 	double over25total;
 	double over15home;
@@ -59,20 +67,52 @@ public class Team {
 		this.totalgoals = totalgoals;
 	}
 
-	public int getGoalsFor() {
-		return goalsFor;
+	public int getTotalgoalsFor() {
+		return totalgoalsFor;
 	}
 
-	public void setGoalsFor(int goalsFor) {
-		this.goalsFor = goalsFor;
+	public void setTotalgoalsFor(int totalgoalsFor) {
+		this.totalgoalsFor = totalgoalsFor;
 	}
 
-	public int getGoalsAverage() {
-		return goalsAverage;
+	public int getTotalgoalsAverage() {
+		return totalgoalsAverage;
 	}
 
-	public void setGoalsAverage(int goalsAverage) {
-		this.goalsAverage = goalsAverage;
+	public void setTotalgoalsAverage(int totalgoalsAverage) {
+		this.totalgoalsAverage = totalgoalsAverage;
+	}
+
+	public int getTotalgoalsForHome() {
+		return totalgoalsForHome;
+	}
+
+	public void setTotalgoalsForHome(int totalgoalsForHome) {
+		this.totalgoalsForHome = totalgoalsForHome;
+	}
+
+	public int getTotalgoalsAverageHome() {
+		return totalgoalsAverageHome;
+	}
+
+	public void setTotalgoalsAverageHome(int totalgoalsAverageHome) {
+		this.totalgoalsAverageHome = totalgoalsAverageHome;
+	}
+
+	public int getTotalgoalsForAway() {
+		return totalgoalsForAway;
+	}
+
+	public void setTotalgoalsForAway(int totalgoalsForAway) {
+		this.totalgoalsForAway = totalgoalsForAway;
+	}
+
+	public int getTotalgoalsAverageAway() {
+		return totalgoalsAverageAway;
+	}
+
+	public void setTotalgoalsAverageAway(int totalgoalsAverageAway) {
+		this.totalgoalsAverageAway = totalgoalsAverageAway;
 	}
 
 	public double getAvgGoals() {
@@ -97,6 +137,38 @@ public class Team {
 
 	public void setAvgGoalsAverage(double avgGoalsAverage) {
 		this.avgGoalsAverage = avgGoalsAverage;
+	}
+
+	public double getAvgGoalsForHome() {
+		return avgGoalsForHome;
+	}
+
+	public void setAvgGoalsForHome(double avgGoalsForHome) {
+		this.avgGoalsForHome = avgGoalsForHome;
+	}
+
+	public double getAvgGoalsAverageHome() {
+		return avgGoalsAverageHome;
+	}
+
+	public void setAvgGoalsAverageHome(double avgGoalsAverageHome) {
+		this.avgGoalsAverageHome = avgGoalsAverageHome;
+	}
+
+	public double getAvgGoalsForAway() {
+		return avgGoalsForAway;
+	}
+
+	public void setAvgGoalsForAway(double avgGoalsForAway) {
+		this.avgGoalsForAway = avgGoalsForAway;
+	}
+
+	public double getAvgGoalsAverageAway() {
+		return avgGoalsAverageAway;
+	}
+
+	public void setAvgGoalsAverageAway(double avgGoalsAverageAway) {
+		this.avgGoalsAverageAway = avgGoalsAverageAway;
 	}
 
 	public double getOver15total() {

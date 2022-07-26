@@ -120,10 +120,35 @@ public class MainControl {
 		Team team1 = repository.searchTeam(home);
 		Team team2 = repository.searchTeam(away);
 		
+		//Team 1 Matches
 		team1.setMatches(team1.getMatches()+1);
 		team1.setMatchesHome(team1.getMatchesHome()+1);
+		
+		//Team 1 Goals
 		team1.setTotalgoals(team1.getTotalgoals()+Integer.parseInt(gfHome)+Integer.parseInt(gfAway));	
-		team1.setAvgGoals(team1.getTotalgoals()/team1.getMatches());		
+		team1.setTotalgoalsFor(team1.getTotalgoalsFor()+Integer.parseInt(gfHome));
+		team1.setTotalgoalsAverage(team1.getTotalgoalsAverage()+Integer.parseInt(gfAway));
+		team1.setTotalgoalsForHome(team1.getTotalgoalsForHome()+Integer.parseInt(gfHome));
+		team1.setTotalgoalsAverageHome(team1.getTotalgoalsAverageHome()+Integer.parseInt(gfAway));
+		
+		//Team 1 Goals Avg
+		team1.setAvgGoals(team1.getTotalgoals()/team1.getMatches());
+		team1.setAvgGoalsFor(team1.getTotalgoalsFor()/team1.getMatches());
+		team1.setAvgGoalsAverage(team1.getTotalgoalsAverage()/team1.getMatches());
+		team1.setAvgGoalsForHome(team1.getAvgGoalsForHome()/team1.getMatchesHome());
+		team1.setAvgGoalsAverageHome(team1.getAvgGoalsAverageHome()/team1.getMatchesHome());
+		
+		//Team 1 Overs
+		
+		if((Integer.parseInt(gfHome)+Integer.parseInt(gfAway)) > 1.5) {
+			
+			
+			
+		}
+		
+		//Time 2
+		team2.setMatches(team1.getMatches()+1);
+		team2.setMatchesHome(team2.getMatchesAway()+1);
 
 	}
 
