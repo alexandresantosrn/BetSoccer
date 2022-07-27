@@ -146,9 +146,16 @@ public class MainControl {
 			
 		}
 		
-		//Time 2
+		//Team 2
 		team2.setMatches(team1.getMatches()+1);
 		team2.setMatchesHome(team2.getMatchesAway()+1);
+		
+		//Team 2 Goals
+		team2.setTotalgoals(team2.getTotalgoals()+Integer.parseInt(gfHome)+Integer.parseInt(gfAway));	
+		team2.setTotalgoalsFor(team2.getTotalgoalsFor()+Integer.parseInt(gfAway));
+		team2.setTotalgoalsAverage(team2.getTotalgoalsAverage()+Integer.parseInt(gfHome));
+		team2.setTotalgoalsForHome(team2.getTotalgoalsForHome()+Integer.parseInt(gfAway));
+		team2.setTotalgoalsAverageHome(team2.getTotalgoalsAverageHome()+Integer.parseInt(gfHome));
 
 	}
 
