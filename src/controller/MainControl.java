@@ -138,24 +138,49 @@ public class MainControl {
 		team1.setAvgGoalsForHome(team1.getAvgGoalsForHome()/team1.getMatchesHome());
 		team1.setAvgGoalsAverageHome(team1.getAvgGoalsAverageHome()/team1.getMatchesHome());
 		
-		//Team 1 Overs
-		
+		//Team 1 Overs		
 		if((Integer.parseInt(gfHome)+Integer.parseInt(gfAway)) > 1.5) {
 			
+			team1.setAvgOver15(team1.getAvgOver15()+1);
+			team1.setAvgOver15Home(team1.getAvgOver15Home()+1);			
+		}
+		
+		if((Integer.parseInt(gfHome)+Integer.parseInt(gfAway)) > 2.5) {
 			
-			
+			team1.setAvgOver25(team1.getAvgOver25()+1);
+			team1.setAvgOver25Home(team1.getAvgOver25Home()+1);			
 		}
 		
 		//Team 2
 		team2.setMatches(team1.getMatches()+1);
-		team2.setMatchesHome(team2.getMatchesAway()+1);
+		team2.setMatchesAway(team2.getMatchesAway()+1);
 		
 		//Team 2 Goals
 		team2.setTotalgoals(team2.getTotalgoals()+Integer.parseInt(gfHome)+Integer.parseInt(gfAway));	
 		team2.setTotalgoalsFor(team2.getTotalgoalsFor()+Integer.parseInt(gfAway));
 		team2.setTotalgoalsAverage(team2.getTotalgoalsAverage()+Integer.parseInt(gfHome));
-		team2.setTotalgoalsForHome(team2.getTotalgoalsForHome()+Integer.parseInt(gfAway));
-		team2.setTotalgoalsAverageHome(team2.getTotalgoalsAverageHome()+Integer.parseInt(gfHome));
+		team2.setTotalgoalsForAway(team2.getTotalgoalsForAway()+Integer.parseInt(gfAway));
+		team2.setTotalgoalsAverageAway(team2.getTotalgoalsAverageAway()+Integer.parseInt(gfHome));
+		
+		//Team 2 Goals Avg
+		team2.setAvgGoals(team2.getTotalgoals()/team2.getMatches());
+		team2.setAvgGoalsFor(team2.getTotalgoalsFor()/team2.getMatches());
+		team2.setAvgGoalsAverage(team2.getTotalgoalsAverage()/team2.getMatches());
+		team2.setAvgGoalsForAway(team2.getAvgGoalsForAway()/team2.getMatchesAway());
+		team2.setAvgGoalsAverageAway(team2.getAvgGoalsAverageAway()/team2.getMatchesAway());
+		
+		//Team 2 Overs		
+		if((Integer.parseInt(gfHome)+Integer.parseInt(gfAway)) > 1.5) {
+			
+			team2.setAvgOver15(team2.getAvgOver15()+1);
+			team2.setAvgOver15Home(team2.getAvgOver15Home()+1);			
+		}
+		
+		if((Integer.parseInt(gfHome)+Integer.parseInt(gfAway)) > 2.5) {
+			
+			team2.setAvgOver25(team2.getAvgOver25()+1);
+			team2.setAvgOver25Home(team2.getAvgOver25Home()+1);			
+		}
 
 	}
 
