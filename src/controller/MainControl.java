@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import model.League;
+import model.Match;
 import model.Team;
 import repository.RepositoryLeagues;
 import repository.RepositoryTeams;
@@ -181,6 +182,15 @@ public class MainControl {
 			team2.setAvgOver25(team2.getAvgOver25()+1);
 			team2.setAvgOver25Home(team2.getAvgOver25Home()+1);			
 		}
+		
+		//Matches		
+		Match match1 = new Match();
+		Match match2 = new Match();		
+		
+		match1.setHomeTeam(team1);
+		match1.setAwayTeam(team2);
+		match1.setHomeScore(Integer.parseInt(gfHome));
+		match1.setAwayScore(Integer.parseInt(gfAway));
 
 	}
 
