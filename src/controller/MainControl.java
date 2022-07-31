@@ -5,6 +5,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 import model.League;
 import model.Match;
@@ -239,7 +241,60 @@ public class MainControl {
 		FileWriter file = new FileWriter("file.csv");
 		PrintWriter recordingFile = new PrintWriter(file);
 		
-		recordingFile.printf("asdad");
+		//First line
+		recordingFile.printf("Casa");
+		recordingFile.printf(";");
+		recordingFile.printf("Fora");
+		recordingFile.printf(";");
+		recordingFile.printf("PlacarCasa");
+		recordingFile.printf(";");
+		recordingFile.printf("PlacarFora");
+		recordingFile.printf(";");
+		recordingFile.printf("MediaTotalCasa");
+		recordingFile.printf(";");
+		recordingFile.printf("MediaTotalPro");
+		recordingFile.printf(";");
+		recordingFile.printf("MediaTotalContra");		
+		recordingFile.printf(";");
+		recordingFile.printf("MediaTotalEmCasa");
+		recordingFile.printf(";");
+		recordingFile.printf("MediaTotalProEmCasa");
+		recordingFile.printf(";");
+		recordingFile.printf("MediaTotalContraEmCasa");		
+		recordingFile.printf(";");
+		recordingFile.printf("MediaTotalFora");
+		recordingFile.printf(";");
+		recordingFile.printf("MediaTotalPro");
+		recordingFile.printf(";");
+		recordingFile.printf("MediaTotalContra");		
+		recordingFile.printf(";");
+		recordingFile.printf("MediaTotalEmFora");
+		recordingFile.printf(";");
+		recordingFile.printf("MediaTotalProEmFora");
+		recordingFile.printf(";");
+		recordingFile.printf("MediaTotalContraEmFora");		
+		recordingFile.printf(";");
+		recordingFile.printf("Total15Casa");	
+		recordingFile.printf(";");
+		recordingFile.printf("Total15EmCasa");	
+		recordingFile.printf(";");
+		recordingFile.printf("Total25Casa");	
+		recordingFile.printf(";");
+		recordingFile.printf("Total25EmCasa");	
+		recordingFile.printf(";");
+		recordingFile.printf("Total15Fora");	
+		recordingFile.printf(";");
+		recordingFile.printf("Total15EmFora");	
+		recordingFile.printf(";");
+		recordingFile.printf("Total25Fora");	
+		recordingFile.printf(";");
+		recordingFile.printf("Total25EmFora");		
+		
+		List<Team> teams = new ArrayList<Team>();
+		
+		teams = repository.getTeams();
+		
+		
 		
 		file.close();
 	}

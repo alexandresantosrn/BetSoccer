@@ -47,4 +47,8 @@ public class RepositoryTeams {
 
 	}
 
+	public List<Team> getTeams() {
+		return teams;
+	}
+
 }

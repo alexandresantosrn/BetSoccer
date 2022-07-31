@@ -1,0 +1,18 @@
+package repository;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import model.Match;
+
+public class RepositoryMatches {
+
+	List<Match> matches = new ArrayList<Match>();
+
+	public void addLeague(Match match) {
+
+		matches.add(match);
+		System.out.println("Partida adicionada com sucesso!!");
+	}
+
+}
