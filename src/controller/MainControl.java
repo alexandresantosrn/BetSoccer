@@ -2,6 +2,7 @@ package controller;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 import model.League;
@@ -18,14 +19,15 @@ public class MainControl {
 
 	public static void importMatches() throws IOException {
 
-		final String path = "/home/bzaum/teste.txt";
+		final String path = "/home/bzaum/teste.txt"; // The path
 
 		System.out.println("Importando o caminho do arquivo...");
 
-		importLeague(path);
-		importTeams(path);
+		importLeague(path); // Importing league
+		importTeams(path); // Importing teams
 		importGames(path);
-	}
+		exportMatches();
+	}	
 
 	private static void importLeague(String path) throws IOException {
 
@@ -52,7 +54,7 @@ public class MainControl {
 
 		String line = readingFile.readLine();
 
-		line = readingFile.readLine();
+		line = readingFile.readLine(); // Going to the second line
 
 		while (line != null) {
 
@@ -64,7 +66,7 @@ public class MainControl {
 			createTeam(home);
 			createTeam(away);
 
-			line = readingFile.readLine();
+			line = readingFile.readLine(); // Going to the next line
 		}
 
 		readingFile.close();
@@ -129,6 +131,7 @@ public class MainControl {
 		team1.setTotalgoals(team1.getTotalgoals() + Integer.parseInt(gfHome) + Integer.parseInt(gfAway));
 		team1.setTotalgoalsFor(team1.getTotalgoalsFor() + Integer.parseInt(gfHome));
 		team1.setTotalgoalsAverage(team1.getTotalgoalsAverage() + Integer.parseInt(gfAway));
+		team1.setTotalGoalsHome(team1.getTotalGoalsHome() + Integer.parseInt(gfHome) + Integer.parseInt(gfAway));
 		team1.setTotalgoalsForHome(team1.getTotalgoalsForHome() + Integer.parseInt(gfHome));
 		team1.setTotalgoalsAverageHome(team1.getTotalgoalsAverageHome() + Integer.parseInt(gfAway));
 
@@ -136,6 +139,7 @@ public class MainControl {
 		team1.setAvgGoals(team1.getTotalgoals() / team1.getMatches());
 		team1.setAvgGoalsFor(team1.getTotalgoalsFor() / team1.getMatches());
 		team1.setAvgGoalsAverage(team1.getTotalgoalsAverage() / team1.getMatches());
+		team1.setAvgGoalsHome(team1.getTotalGoalsHome() / team1.getMatchesHome());
 		team1.setAvgGoalsForHome(team1.getAvgGoalsForHome() / team1.getMatchesHome());
 		team1.setAvgGoalsAverageHome(team1.getAvgGoalsAverageHome() / team1.getMatchesHome());
 
@@ -153,13 +157,14 @@ public class MainControl {
 		}
 
 		// Team 2
-		team2.setMatches(team1.getMatches() + 1);
+		team2.setMatches(team2.getMatches() + 1);
 		team2.setMatchesAway(team2.getMatchesAway() + 1);
 
 		// Team 2 Goals
 		team2.setTotalgoals(team2.getTotalgoals() + Integer.parseInt(gfHome) + Integer.parseInt(gfAway));
 		team2.setTotalgoalsFor(team2.getTotalgoalsFor() + Integer.parseInt(gfAway));
 		team2.setTotalgoalsAverage(team2.getTotalgoalsAverage() + Integer.parseInt(gfHome));
+		team2.setTotalGoalsAway(team2.getTotalGoalsAway() + Integer.parseInt(gfHome) + Integer.parseInt(gfAway));
 		team2.setTotalgoalsForAway(team2.getTotalgoalsForAway() + Integer.parseInt(gfAway));
 		team2.setTotalgoalsAverageAway(team2.getTotalgoalsAverageAway() + Integer.parseInt(gfHome));
 
@@ -167,6 +172,7 @@ public class MainControl {
 		team2.setAvgGoals(team2.getTotalgoals() / team2.getMatches());
 		team2.setAvgGoalsFor(team2.getTotalgoalsFor() / team2.getMatches());
 		team2.setAvgGoalsAverage(team2.getTotalgoalsAverage() / team2.getMatches());
+		team2.setAvgGoalsAway(team2.getTotalGoalsHome() / team2.getMatchesAway());
 		team2.setAvgGoalsForAway(team2.getAvgGoalsForAway() / team2.getMatchesAway());
 		team2.setAvgGoalsAverageAway(team2.getAvgGoalsAverageAway() / team2.getMatchesAway());
 
@@ -184,7 +190,7 @@ public class MainControl {
 		}
 
 		// Matches
-		Match match = new Match();	
+		Match match = new Match();
 
 		// Match
 		match.setHomeTeam(team1);
@@ -198,18 +204,39 @@ public class MainControl {
 		match.setAvgGoalsTotalAverageHome(team1.getAvgGoalsAverage());
 
 		// Basic Team2
-		match.setAvgGoalsTotalAway(team1.getAvgGoals());
-		match.setAvgGoalsTotalForAway(team1.getAvgGoalsFor());
-		match.setAvgGoalsTotalAverageAway(team1.getAvgGoalsAverage());
-		
+		match.setAvgGoalsTotalAway(team2.getAvgGoals());
+		match.setAvgGoalsTotalForAway(team2.getAvgGoalsFor());
+		match.setAvgGoalsTotalAverageAway(team2.getAvgGoalsAverage());
+
 		// Team1 Goals
-		match.setAvgGoalsHome(team1.getHome)
+		match.setAvgGoalsHome(team1.getAvgGoalsHome());
+		match.setAvgGoalsForHome(team1.getAvgGoalsForHome());
+		match.setAvgGoalsAgainstHome(team1.getAvgGoalsAverageHome());
 		
+		// Team2 Goals
+		match.setAvgGoalsAway(team1.getAvgGoalsAway());
+		match.setAvgGoalsForAway(team1.getAvgGoalsForAway());
+		match.setAvgGoalsAgainstAway(team1.getAvgGoalsAverageAway());
+		
+		// Updating 1.5 Goals
+		match.setAvgGoals15HomeTotal(team1.getAvgOver15());
+		match.setAvgGoals15Home(team1.getAvgOver15Home());
+
+		match.setAvgGoals15AwayTotal(team2.getAvgOver15());
+		match.setAvgGoals15Away(team2.getAvgOver15Away());
+
+		// Updating 2.5 Goals
+		match.setAvgGoals25HomeTotal(team1.getAvgOver25());
+		match.setAvgGoals25Home(team1.getAvgOver25Home());
+
+		match.setAvgGoals25AwayTotal(team2.getAvgOver25());
+		match.setAvgGoals25Away(team2.getAvgOver25Away());
 
 	}
 
 	public static void exportMatches() {
-
+		
+		
 	}
 
 }
