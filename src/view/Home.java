@@ -30,7 +30,8 @@ public class Home {
 					break;
 
 				case 2:
-					System.out.println("2");
+					System.out.println("Extraindo partidas...");
+					MainControl.exportMatches();
 					break;
 
 				default:

@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import model.League;
 import model.Match;
@@ -25,8 +26,7 @@ public class MainControl {
 
 		importLeague(path); // Importing league
 		importTeams(path); // Importing teams
-		importGames(path);
-		exportMatches();
+		importGames(path);		
 	}	
 
 	private static void importLeague(String path) throws IOException {
@@ -234,9 +234,14 @@ public class MainControl {
 
 	}
 
-	public static void exportMatches() {
+	public static void exportMatches() throws IOException {
 		
+		FileWriter file = new FileWriter("file.csv");
+		PrintWriter recordingFile = new PrintWriter(file);
 		
+		recordingFile.printf("asdad");
+		
+		file.close();
 	}
 
 }
