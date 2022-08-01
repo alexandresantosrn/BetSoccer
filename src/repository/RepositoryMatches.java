@@ -15,4 +15,8 @@ public class RepositoryMatches {
 		System.out.println("Partida adicionada com sucesso!!");
 	}
 
+	public List<Match> getMatches() {
+		return matches;
+	}
+
 }

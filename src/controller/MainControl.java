@@ -12,6 +12,7 @@ import model.League;
 import model.Match;
 import model.Team;
 import repository.RepositoryLeagues;
+import repository.RepositoryMatches;
 import repository.RepositoryTeams;
 
 public class MainControl {
@@ -19,6 +20,8 @@ public class MainControl {
 	static RepositoryTeams repository = new RepositoryTeams();
 
 	static RepositoryLeagues repositoryl = new RepositoryLeagues();
+
+	static RepositoryMatches repositorym = new RepositoryMatches();
 
 	public static void importMatches() throws IOException {
 
@@ -28,8 +31,8 @@ public class MainControl {
 
 		importLeague(path); // Importing league
 		importTeams(path); // Importing teams
-		importGames(path);		
-	}	
+		importGames(path); //Importing games
+	}
 
 	private static void importLeague(String path) throws IOException {
 
@@ -214,12 +217,12 @@ public class MainControl {
 		match.setAvgGoalsHome(team1.getAvgGoalsHome());
 		match.setAvgGoalsForHome(team1.getAvgGoalsForHome());
 		match.setAvgGoalsAgainstHome(team1.getAvgGoalsAverageHome());
-		
+
 		// Team2 Goals
 		match.setAvgGoalsAway(team1.getAvgGoalsAway());
 		match.setAvgGoalsForAway(team1.getAvgGoalsForAway());
 		match.setAvgGoalsAgainstAway(team1.getAvgGoalsAverageAway());
-		
+
 		// Updating 1.5 Goals
 		match.setAvgGoals15HomeTotal(team1.getAvgOver15());
 		match.setAvgGoals15Home(team1.getAvgOver15Home());
@@ -238,10 +241,15 @@ public class MainControl {
 
 	public static void exportMatches() throws IOException {
 		
+		List<Match> matches = new ArrayList<Match>();		
+		matches = repositorym.getMatches();
+
 		FileWriter file = new FileWriter("file.csv");
 		PrintWriter recordingFile = new PrintWriter(file);
-		
-		//First line
+
+		// First line
+		recordingFile.printf("Indice");
+		recordingFile.printf(";");
 		recordingFile.printf("Casa");
 		recordingFile.printf(";");
 		recordingFile.printf("Fora");
@@ -254,48 +262,48 @@ public class MainControl {
 		recordingFile.printf(";");
 		recordingFile.printf("MediaTotalPro");
 		recordingFile.printf(";");
-		recordingFile.printf("MediaTotalContra");		
+		recordingFile.printf("MediaTotalContra");
 		recordingFile.printf(";");
 		recordingFile.printf("MediaTotalEmCasa");
 		recordingFile.printf(";");
 		recordingFile.printf("MediaTotalProEmCasa");
 		recordingFile.printf(";");
-		recordingFile.printf("MediaTotalContraEmCasa");		
+		recordingFile.printf("MediaTotalContraEmCasa");
 		recordingFile.printf(";");
 		recordingFile.printf("MediaTotalFora");
 		recordingFile.printf(";");
 		recordingFile.printf("MediaTotalPro");
 		recordingFile.printf(";");
-		recordingFile.printf("MediaTotalContra");		
+		recordingFile.printf("MediaTotalContra");
 		recordingFile.printf(";");
 		recordingFile.printf("MediaTotalEmFora");
 		recordingFile.printf(";");
 		recordingFile.printf("MediaTotalProEmFora");
 		recordingFile.printf(";");
-		recordingFile.printf("MediaTotalContraEmFora");		
+		recordingFile.printf("MediaTotalContraEmFora");
 		recordingFile.printf(";");
-		recordingFile.printf("Total15Casa");	
+		recordingFile.printf("Total15Casa");
 		recordingFile.printf(";");
-		recordingFile.printf("Total15EmCasa");	
+		recordingFile.printf("Total15EmCasa");
 		recordingFile.printf(";");
-		recordingFile.printf("Total25Casa");	
+		recordingFile.printf("Total25Casa");
 		recordingFile.printf(";");
-		recordingFile.printf("Total25EmCasa");	
+		recordingFile.printf("Total25EmCasa");
 		recordingFile.printf(";");
-		recordingFile.printf("Total15Fora");	
+		recordingFile.printf("Total15Fora");
 		recordingFile.printf(";");
-		recordingFile.printf("Total15EmFora");	
+		recordingFile.printf("Total15EmFora");
 		recordingFile.printf(";");
-		recordingFile.printf("Total25Fora");	
+		recordingFile.printf("Total25Fora");
 		recordingFile.printf(";");
-		recordingFile.printf("Total25EmFora");		
+		recordingFile.printf("Total25EmFora");
+		recordingFile.println(";");
 		
-		List<Team> teams = new ArrayList<Team>();
-		
-		teams = repository.getTeams();
-		
-		
-		
+		for (Match match: matches) {
+			
+			recordingFile.printf("x");
+		}
+
 		file.close();
 	}
 
