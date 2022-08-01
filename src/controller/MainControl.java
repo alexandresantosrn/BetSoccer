@@ -126,8 +126,8 @@ public class MainControl {
 	private static void createMatch(String home, String away, String gfHome, String gfAway) {
 
 		Team team1 = repository.searchTeam(home);
-		Team team2 = repository.searchTeam(away);
-
+		Team team2 = repository.searchTeam(away);		
+		
 		// Team 1 Matches
 		team1.setMatches(team1.getMatches() + 1);
 		team1.setMatchesHome(team1.getMatchesHome() + 1);
@@ -196,6 +196,7 @@ public class MainControl {
 
 		// Matches
 		Match match = new Match();
+		match.setIndex(match.getIndex()+1);
 
 		// Match
 		match.setHomeTeam(team1);
@@ -236,7 +237,8 @@ public class MainControl {
 
 		match.setAvgGoals25AwayTotal(team2.getAvgOver25());
 		match.setAvgGoals25Away(team2.getAvgOver25Away());
-
+		
+		repositorym.addMatch(match);
 	}
 
 	public static void exportMatches() throws IOException {
@@ -301,7 +303,21 @@ public class MainControl {
 		
 		for (Match match: matches) {
 			
-			recordingFile.printf("x");
+			recordingFile.print(match.getIndex());
+			recordingFile.print(";");
+			recordingFile.print(match.getHomeTeam().getName());
+			recordingFile.print(";");
+			recordingFile.print(match.getAwayTeam().getName());
+			recordingFile.print(";");
+			recordingFile.print(match.getHomeScore());
+			recordingFile.print(";");
+			recordingFile.print(match.getAwayScore());			
+			recordingFile.print(";");
+			recordingFile.print(match.getAvgGoalsTotalHome());
+			recordingFile.print(";");
+			recordingFile.print(match.getAvgGoalsTotalForHome());
+			recordingFile.print(";");
+			recordingFile.println(match.getAvgGoalsTotalAverageHome());
 		}
 
 		file.close();

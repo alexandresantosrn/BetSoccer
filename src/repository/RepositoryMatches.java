@@ -9,7 +9,7 @@ public class RepositoryMatches {
 
 	List<Match> matches = new ArrayList<Match>();
 
-	public void addLeague(Match match) {
+	public void addMatch(Match match) {
 
 		matches.add(match);
 		System.out.println("Partida adicionada com sucesso!!");

@@ -2,7 +2,7 @@ package model;
 
 public class Match {
 
-	int index;
+	int index=0;
 	Team homeTeam;
 	Team awayTeam;
 	int homeScore;
