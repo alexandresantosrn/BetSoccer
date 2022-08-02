@@ -31,7 +31,7 @@ public class MainControl {
 
 		importLeague(path); // Importing league
 		importTeams(path); // Importing teams
-		importGames(path); //Importing games
+		importGames(path); // Importing games
 	}
 
 	private static void importLeague(String path) throws IOException {
@@ -126,8 +126,8 @@ public class MainControl {
 	private static void createMatch(String home, String away, String gfHome, String gfAway) {
 
 		Team team1 = repository.searchTeam(home);
-		Team team2 = repository.searchTeam(away);		
-		
+		Team team2 = repository.searchTeam(away);
+
 		// Team 1 Matches
 		team1.setMatches(team1.getMatches() + 1);
 		team1.setMatchesHome(team1.getMatchesHome() + 1);
@@ -196,7 +196,7 @@ public class MainControl {
 
 		// Matches
 		Match match = new Match();
-		match.setIndex(match.getIndex()+1);
+		match.setIndex(match.getIndex() + 1);
 
 		// Match
 		match.setHomeTeam(team1);
@@ -237,13 +237,13 @@ public class MainControl {
 
 		match.setAvgGoals25AwayTotal(team2.getAvgOver25());
 		match.setAvgGoals25Away(team2.getAvgOver25Away());
-		
+
 		repositorym.addMatch(match);
 	}
 
 	public static void exportMatches() throws IOException {
-		
-		List<Match> matches = new ArrayList<Match>();		
+
+		List<Match> matches = new ArrayList<Match>();
 		matches = repositorym.getMatches();
 
 		FileWriter file = new FileWriter("file.csv");
@@ -300,9 +300,9 @@ public class MainControl {
 		recordingFile.printf(";");
 		recordingFile.printf("Total25EmFora");
 		recordingFile.println(";");
-		
-		for (Match match: matches) {
-			
+
+		for (Match match : matches) {
+
 			recordingFile.print(match.getIndex());
 			recordingFile.print(";");
 			recordingFile.print(match.getHomeTeam().getName());
@@ -311,13 +311,14 @@ public class MainControl {
 			recordingFile.print(";");
 			recordingFile.print(match.getHomeScore());
 			recordingFile.print(";");
-			recordingFile.print(match.getAwayScore());			
+			recordingFile.print(match.getAwayScore());
 			recordingFile.print(";");
 			recordingFile.print(match.getAvgGoalsTotalHome());
 			recordingFile.print(";");
 			recordingFile.print(match.getAvgGoalsTotalForHome());
 			recordingFile.print(";");
 			recordingFile.println(match.getAvgGoalsTotalAverageHome());
+			recordingFile.print(";");
 		}
 
 		file.close();
