@@ -127,6 +127,54 @@ public class MainControl {
 
 		Team team1 = repository.searchTeam(home);
 		Team team2 = repository.searchTeam(away);
+		
+		//Updating Matches
+		
+		// Matches
+		Match match = new Match();
+		match.setIndex(match.getIndex() + 1);
+
+		// Match
+		match.setHomeTeam(team1);
+		match.setAwayTeam(team2);
+		match.setHomeScore(Integer.parseInt(gfHome));
+		match.setAwayScore(Integer.parseInt(gfAway));
+
+		// Basic Team1
+		match.setAvgGoalsTotalHome(team1.getAvgGoals());
+		match.setAvgGoalsTotalForHome(team1.getAvgGoalsFor());
+		match.setAvgGoalsTotalAverageHome(team1.getAvgGoalsAverage());
+
+		// Basic Team2
+		match.setAvgGoalsTotalAway(team2.getAvgGoals());
+		match.setAvgGoalsTotalForAway(team2.getAvgGoalsFor());
+		match.setAvgGoalsTotalAverageAway(team2.getAvgGoalsAverage());
+
+		// Team1 Goals
+		match.setAvgGoalsHome(team1.getAvgGoalsHome());
+		match.setAvgGoalsForHome(team1.getAvgGoalsForHome());
+		match.setAvgGoalsAgainstHome(team1.getAvgGoalsAverageHome());
+
+		// Team2 Goals
+		match.setAvgGoalsAway(team1.getAvgGoalsAway());
+		match.setAvgGoalsForAway(team1.getAvgGoalsForAway());
+		match.setAvgGoalsAgainstAway(team1.getAvgGoalsAverageAway());
+
+		// Updating 1.5 Goals
+		match.setAvgGoals15HomeTotal(team1.getAvgOver15());
+		match.setAvgGoals15Home(team1.getAvgOver15Home());
+
+		match.setAvgGoals15AwayTotal(team2.getAvgOver15());
+		match.setAvgGoals15Away(team2.getAvgOver15Away());
+
+		// Updating 2.5 Goals
+		match.setAvgGoals25HomeTotal(team1.getAvgOver25());
+		match.setAvgGoals25Home(team1.getAvgOver25Home());
+
+		match.setAvgGoals25AwayTotal(team2.getAvgOver25());
+		match.setAvgGoals25Away(team2.getAvgOver25Away());
+
+		// Updating teams
 
 		// Team 1 Matches
 		team1.setMatches(team1.getMatches() + 1);
@@ -194,50 +242,6 @@ public class MainControl {
 			team2.setAvgOver25Home(team2.getAvgOver25Home() + 1);
 		}
 
-		// Matches
-		Match match = new Match();
-		match.setIndex(match.getIndex() + 1);
-
-		// Match
-		match.setHomeTeam(team1);
-		match.setAwayTeam(team2);
-		match.setHomeScore(Integer.parseInt(gfHome));
-		match.setAwayScore(Integer.parseInt(gfAway));
-
-		// Basic Team1
-		match.setAvgGoalsTotalHome(team1.getAvgGoals());
-		match.setAvgGoalsTotalForHome(team1.getAvgGoalsFor());
-		match.setAvgGoalsTotalAverageHome(team1.getAvgGoalsAverage());
-
-		// Basic Team2
-		match.setAvgGoalsTotalAway(team2.getAvgGoals());
-		match.setAvgGoalsTotalForAway(team2.getAvgGoalsFor());
-		match.setAvgGoalsTotalAverageAway(team2.getAvgGoalsAverage());
-
-		// Team1 Goals
-		match.setAvgGoalsHome(team1.getAvgGoalsHome());
-		match.setAvgGoalsForHome(team1.getAvgGoalsForHome());
-		match.setAvgGoalsAgainstHome(team1.getAvgGoalsAverageHome());
-
-		// Team2 Goals
-		match.setAvgGoalsAway(team1.getAvgGoalsAway());
-		match.setAvgGoalsForAway(team1.getAvgGoalsForAway());
-		match.setAvgGoalsAgainstAway(team1.getAvgGoalsAverageAway());
-
-		// Updating 1.5 Goals
-		match.setAvgGoals15HomeTotal(team1.getAvgOver15());
-		match.setAvgGoals15Home(team1.getAvgOver15Home());
-
-		match.setAvgGoals15AwayTotal(team2.getAvgOver15());
-		match.setAvgGoals15Away(team2.getAvgOver15Away());
-
-		// Updating 2.5 Goals
-		match.setAvgGoals25HomeTotal(team1.getAvgOver25());
-		match.setAvgGoals25Home(team1.getAvgOver25Home());
-
-		match.setAvgGoals25AwayTotal(team2.getAvgOver25());
-		match.setAvgGoals25Away(team2.getAvgOver25Away());
-
 		repositorym.addMatch(match);
 	}
 
@@ -262,9 +266,9 @@ public class MainControl {
 		recordingFile.printf(";");
 		recordingFile.printf("MediaTotalCasa");
 		recordingFile.printf(";");
-		recordingFile.printf("MediaTotalPro");
+		recordingFile.printf("MediaTotalProCasa");
 		recordingFile.printf(";");
-		recordingFile.printf("MediaTotalContra");
+		recordingFile.printf("MediaTotalContraCasa");
 		recordingFile.printf(";");
 		recordingFile.printf("MediaTotalEmCasa");
 		recordingFile.printf(";");
@@ -274,9 +278,9 @@ public class MainControl {
 		recordingFile.printf(";");
 		recordingFile.printf("MediaTotalFora");
 		recordingFile.printf(";");
-		recordingFile.printf("MediaTotalPro");
+		recordingFile.printf("MediaTotalProFora");
 		recordingFile.printf(";");
-		recordingFile.printf("MediaTotalContra");
+		recordingFile.printf("MediaTotalContraFora");
 		recordingFile.printf(";");
 		recordingFile.printf("MediaTotalEmFora");
 		recordingFile.printf(";");
@@ -317,8 +321,7 @@ public class MainControl {
 			recordingFile.print(";");
 			recordingFile.print(match.getAvgGoalsTotalForHome());
 			recordingFile.print(";");
-			recordingFile.println(match.getAvgGoalsTotalAverageHome());
-			recordingFile.print(";");
+			recordingFile.println(match.getAvgGoalsTotalAverageHome());			
 		}
 
 		file.close();
