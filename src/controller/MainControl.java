@@ -321,7 +321,14 @@ public class MainControl {
 			recordingFile.print(";");
 			recordingFile.print(match.getAvgGoalsTotalForHome());
 			recordingFile.print(";");
-			recordingFile.println(match.getAvgGoalsTotalAverageHome());			
+			recordingFile.println(match.getAvgGoalsTotalAverageHome());		
+			recordingFile.print(";");
+			recordingFile.print(match.getAvgGoalsHome());
+			recordingFile.print(";");
+			recordingFile.print(match.getAvgGoalsForHome());
+			recordingFile.print(";");
+			recordingFile.print(match.getAvgGoalsAgainstHome());
+			recordingFile.print(";");
 		}
 
 		file.close();
