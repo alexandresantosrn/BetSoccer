@@ -329,6 +329,18 @@ public class MainControl {
 			recordingFile.print(";");
 			recordingFile.print(match.getAvgGoalsAgainstHome());
 			recordingFile.print(";");
+			recordingFile.print(match.getAvgGoalsTotalAway());
+			recordingFile.print(";");
+			recordingFile.print(match.getAvgGoalsTotalForAway());
+			recordingFile.print(";");
+			recordingFile.print(match.getAvgGoalsTotalAverageAway());
+			recordingFile.print(";");
+			recordingFile.print(match.getAvgGoalsAway());
+			recordingFile.print(";");
+			recordingFile.print(match.getAvgGoalsForAway());
+			recordingFile.print(";");
+			recordingFile.print(match.getAvgGoalsAgainstAway());
+			
 		}
 
 		file.close();
