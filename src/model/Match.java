@@ -2,7 +2,6 @@ package model;
 
 public class Match {
 
-	int index=0;
 	Team homeTeam;
 	Team awayTeam;
 	int homeScore;
@@ -27,14 +26,6 @@ public class Match {
 	double avgGoals15Away;
 	double avgGoals25AwayTotal;
 	double avgGoals25Away;
-
-	public int getIndex() {
-		return index;
-	}
-
-	public void setIndex(int index) {
-		this.index = index;
-	}
 
 	public Team getHomeTeam() {
 		return homeTeam;

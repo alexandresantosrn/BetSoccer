@@ -132,7 +132,6 @@ public class MainControl {
 
 		// Matches
 		Match match = new Match();
-		match.setIndex(match.getIndex() + 1);
 
 		// Match
 		match.setHomeTeam(team1);
@@ -176,10 +175,6 @@ public class MainControl {
 
 		// Updating teams
 
-		// Team 1 Matches
-		team1.setMatches(team1.getMatches() + 1);
-		team1.setMatchesHome(team1.getMatchesHome() + 1);
-
 		// Team 1 Goals
 		team1.setTotalgoals(team1.getTotalgoals() + Integer.parseInt(gfHome) + Integer.parseInt(gfAway));
 		team1.setTotalgoalsFor(team1.getTotalgoalsFor() + Integer.parseInt(gfHome));
@@ -189,12 +184,24 @@ public class MainControl {
 		team1.setTotalgoalsAverageHome(team1.getTotalgoalsAverageHome() + Integer.parseInt(gfAway));
 
 		// Team 1 Goals Avg
-		team1.setAvgGoals(team1.getTotalgoals() / team1.getMatches());
-		team1.setAvgGoalsFor(team1.getTotalgoalsFor() / team1.getMatches());
-		team1.setAvgGoalsAverage(team1.getTotalgoalsAverage() / team1.getMatches());
-		team1.setAvgGoalsHome(team1.getTotalGoalsHome() / team1.getMatchesHome());
-		team1.setAvgGoalsForHome(team1.getAvgGoalsForHome() / team1.getMatchesHome());
-		team1.setAvgGoalsAverageHome(team1.getAvgGoalsAverageHome() / team1.getMatchesHome());
+
+		if (team1.getMatches() != 0 && team1.getMatchesHome() !=0 ) {
+			team1.setAvgGoals(team1.getTotalgoals() / team1.getMatches());
+			team1.setAvgGoalsFor(team1.getTotalgoalsFor() / team1.getMatches());
+			team1.setAvgGoalsAverage(team1.getTotalgoalsAverage() / team1.getMatches());
+			team1.setAvgGoalsHome(team1.getTotalGoalsHome() / team1.getMatchesHome());
+			team1.setAvgGoalsForHome(team1.getAvgGoalsForHome() / team1.getMatchesHome());
+			team1.setAvgGoalsAverageHome(team1.getAvgGoalsAverageHome() / team1.getMatchesHome());
+		}
+
+		else {
+			team1.setAvgGoals(0);
+			team1.setAvgGoalsFor(0);
+			team1.setAvgGoalsAverage(0);
+			team1.setAvgGoalsHome(0);
+			team1.setAvgGoalsForHome(0);
+			team1.setAvgGoalsAverageHome(0);
+		}
 
 		// Team 1 Overs
 		if ((Integer.parseInt(gfHome) + Integer.parseInt(gfAway)) > 1.5) {
@@ -209,9 +216,9 @@ public class MainControl {
 			team1.setAvgOver25Home(team1.getAvgOver25Home() + 1);
 		}
 
-		// Team 2
-		team2.setMatches(team2.getMatches() + 1);
-		team2.setMatchesAway(team2.getMatchesAway() + 1);
+		// Team 1 Matches
+		team1.setMatches(team1.getMatches() + 1);
+		team1.setMatchesHome(team1.getMatchesHome() + 1);
 
 		// Team 2 Goals
 		team2.setTotalgoals(team2.getTotalgoals() + Integer.parseInt(gfHome) + Integer.parseInt(gfAway));
@@ -221,13 +228,25 @@ public class MainControl {
 		team2.setTotalgoalsForAway(team2.getTotalgoalsForAway() + Integer.parseInt(gfAway));
 		team2.setTotalgoalsAverageAway(team2.getTotalgoalsAverageAway() + Integer.parseInt(gfHome));
 
-		// Team 2 Goals Avg
-		team2.setAvgGoals(team2.getTotalgoals() / team2.getMatches());
-		team2.setAvgGoalsFor(team2.getTotalgoalsFor() / team2.getMatches());
-		team2.setAvgGoalsAverage(team2.getTotalgoalsAverage() / team2.getMatches());
-		team2.setAvgGoalsAway(team2.getTotalGoalsHome() / team2.getMatchesAway());
-		team2.setAvgGoalsForAway(team2.getAvgGoalsForAway() / team2.getMatchesAway());
-		team2.setAvgGoalsAverageAway(team2.getAvgGoalsAverageAway() / team2.getMatchesAway());
+		if (team2.getMatches() != 0 && team2.getMatchesAway() !=0 ) {
+			// Team 2 Goals Avg
+			team2.setAvgGoals(team2.getTotalgoals() / team2.getMatches());
+			team2.setAvgGoalsFor(team2.getTotalgoalsFor() / team2.getMatches());
+			team2.setAvgGoalsAverage(team2.getTotalgoalsAverage() / team2.getMatches());
+			team2.setAvgGoalsAway(team2.getTotalGoalsHome() / team2.getMatchesAway());
+			team2.setAvgGoalsForAway(team2.getAvgGoalsForAway() / team2.getMatchesAway());
+			team2.setAvgGoalsAverageAway(team2.getAvgGoalsAverageAway() / team2.getMatchesAway());
+		}
+
+		else {
+
+			team2.setAvgGoals(0);
+			team2.setAvgGoalsFor(0);
+			team2.setAvgGoalsAverage(0);
+			team2.setAvgGoalsHome(0);
+			team2.setAvgGoalsForHome(0);
+			team2.setAvgGoalsAverageHome(0);
+		}
 
 		// Team 2 Overs
 		if ((Integer.parseInt(gfHome) + Integer.parseInt(gfAway)) > 1.5) {
@@ -242,6 +261,10 @@ public class MainControl {
 			team2.setAvgOver25Home(team2.getAvgOver25Home() + 1);
 		}
 
+		// Team 2
+		team2.setMatches(team2.getMatches() + 1);
+		team2.setMatchesAway(team2.getMatchesAway() + 1);
+
 		repositorym.addMatch(match);
 	}
 
@@ -254,8 +277,6 @@ public class MainControl {
 		PrintWriter recordingFile = new PrintWriter(file);
 
 		// First line
-		recordingFile.printf("Indice");
-		recordingFile.printf(";");
 		recordingFile.printf("Casa");
 		recordingFile.printf(";");
 		recordingFile.printf("Fora");
@@ -307,8 +328,6 @@ public class MainControl {
 
 		for (Match match : matches) {
 
-			recordingFile.print(match.getIndex());
-			recordingFile.print(";");
 			recordingFile.print(match.getHomeTeam().getName());
 			recordingFile.print(";");
 			recordingFile.print(match.getAwayTeam().getName());
@@ -355,7 +374,7 @@ public class MainControl {
 			recordingFile.print(";");
 			recordingFile.print(match.getAvgGoals25AwayTotal());
 			recordingFile.print(";");
-			recordingFile.println(match.getAvgGoals25Away());		
+			recordingFile.println(match.getAvgGoals25Away());
 		}
 
 		file.close();
