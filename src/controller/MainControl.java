@@ -127,9 +127,9 @@ public class MainControl {
 
 		Team team1 = repository.searchTeam(home);
 		Team team2 = repository.searchTeam(away);
-		
-		//Updating Matches
-		
+
+		// Updating Matches
+
 		// Matches
 		Match match = new Match();
 		match.setIndex(match.getIndex() + 1);
@@ -321,7 +321,7 @@ public class MainControl {
 			recordingFile.print(";");
 			recordingFile.print(match.getAvgGoalsTotalForHome());
 			recordingFile.print(";");
-			recordingFile.println(match.getAvgGoalsTotalAverageHome());		
+			recordingFile.print(match.getAvgGoalsTotalAverageHome());
 			recordingFile.print(";");
 			recordingFile.print(match.getAvgGoalsHome());
 			recordingFile.print(";");
@@ -340,7 +340,22 @@ public class MainControl {
 			recordingFile.print(match.getAvgGoalsForAway());
 			recordingFile.print(";");
 			recordingFile.print(match.getAvgGoalsAgainstAway());
-			
+			recordingFile.print(";");
+			recordingFile.print(match.getAvgGoals15HomeTotal());
+			recordingFile.print(";");
+			recordingFile.print(match.getAvgGoals15Home());
+			recordingFile.print(";");
+			recordingFile.print(match.getAvgGoals25HomeTotal());
+			recordingFile.print(";");
+			recordingFile.print(match.getAvgGoals25Home());
+			recordingFile.print(";");
+			recordingFile.print(match.getAvgGoals15AwayTotal());
+			recordingFile.print(";");
+			recordingFile.print(match.getAvgGoals15Away());
+			recordingFile.print(";");
+			recordingFile.print(match.getAvgGoals25AwayTotal());
+			recordingFile.print(";");
+			recordingFile.println(match.getAvgGoals25Away());		
 		}
 
 		file.close();
