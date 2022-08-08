@@ -185,7 +185,7 @@ public class MainControl {
 
 		// Team 1 Goals Avg
 
-		if (team1.getMatches() != 0 && team1.getMatchesHome() !=0 ) {
+		if (team1.getMatches() != 0 && team1.getMatchesHome() != 0 ) {
 			team1.setAvgGoals(team1.getTotalgoals() / team1.getMatches());
 			team1.setAvgGoalsFor(team1.getTotalgoalsFor() / team1.getMatches());
 			team1.setAvgGoalsAverage(team1.getTotalgoalsAverage() / team1.getMatches());
