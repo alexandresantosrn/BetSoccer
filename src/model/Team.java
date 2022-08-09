@@ -14,6 +14,7 @@ public class Team {
 	int totalgoalsAverageHome;
 	int totalGoalsAway;
 	int totalgoalsForAway;
+	int totalgoalsAverageAway;
 	int over15total;
 	int over25total;
 	int over15home;
@@ -115,6 +116,14 @@ public class Team {
 
 	public void setTotalgoalsForAway(int totalgoalsForAway) {
 		this.totalgoalsForAway = totalgoalsForAway;
+	}
+
+	public int getTotalgoalsAverageAway() {
+		return totalgoalsAverageAway;
+	}
+
+	public void setTotalgoalsAverageAway(int totalgoalsAverageAway) {
+		this.totalgoalsAverageAway = totalgoalsAverageAway;
 	}
 
 	public int getOver15total() {

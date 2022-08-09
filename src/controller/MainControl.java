@@ -175,6 +175,10 @@ public class MainControl {
 
 		// Updating teams
 
+		// Team 1 Matches
+		team1.setMatches(team1.getMatches() + 1);
+		team1.setMatchesHome(team1.getMatchesHome() + 1);
+
 		// Team 1 Goals
 		team1.setTotalgoals(team1.getTotalgoals() + Integer.parseInt(gfHome) + Integer.parseInt(gfAway));
 		team1.setTotalgoalsFor(team1.getTotalgoalsFor() + Integer.parseInt(gfHome));
@@ -183,42 +187,18 @@ public class MainControl {
 		team1.setTotalgoalsForHome(team1.getTotalgoalsForHome() + Integer.parseInt(gfHome));
 		team1.setTotalgoalsAverageHome(team1.getTotalgoalsAverageHome() + Integer.parseInt(gfAway));
 
-		// Team 1 Goals Avg
-
-		if (team1.getMatches() != 0 && team1.getMatchesHome() != 0 ) {
-			team1.setAvgGoals(team1.getTotalgoals() / team1.getMatches());
-			team1.setAvgGoalsFor(team1.getTotalgoalsFor() / team1.getMatches());
-			team1.setAvgGoalsAverage(team1.getTotalgoalsAverage() / team1.getMatches());
-			team1.setAvgGoalsHome(team1.getTotalGoalsHome() / team1.getMatchesHome());
-			team1.setAvgGoalsForHome(team1.getAvgGoalsForHome() / team1.getMatchesHome());
-			team1.setAvgGoalsAverageHome(team1.getAvgGoalsAverageHome() / team1.getMatchesHome());
-		}
-
-		else {
-			team1.setAvgGoals(0);
-			team1.setAvgGoalsFor(0);
-			team1.setAvgGoalsAverage(0);
-			team1.setAvgGoalsHome(0);
-			team1.setAvgGoalsForHome(0);
-			team1.setAvgGoalsAverageHome(0);
-		}
-
 		// Team 1 Overs
 		if ((Integer.parseInt(gfHome) + Integer.parseInt(gfAway)) > 1.5) {
 
-			team1.setAvgOver15(team1.getAvgOver15() + 1);
-			team1.setAvgOver15Home(team1.getAvgOver15Home() + 1);
+			team1.setOver15total(team1.getOver15total() + 1);
+			team1.setOver15home(team1.getOver15home() + 1);
 		}
 
 		if ((Integer.parseInt(gfHome) + Integer.parseInt(gfAway)) > 2.5) {
 
-			team1.setAvgOver25(team1.getAvgOver25() + 1);
-			team1.setAvgOver25Home(team1.getAvgOver25Home() + 1);
+			team1.setOver25total(team1.getOver25total() + 1);
+			team1.setOver25home(team1.getOver25home() + 1);
 		}
-
-		// Team 1 Matches
-		team1.setMatches(team1.getMatches() + 1);
-		team1.setMatchesHome(team1.getMatchesHome() + 1);
 
 		// Team 2 Goals
 		team2.setTotalgoals(team2.getTotalgoals() + Integer.parseInt(gfHome) + Integer.parseInt(gfAway));
@@ -226,39 +206,19 @@ public class MainControl {
 		team2.setTotalgoalsAverage(team2.getTotalgoalsAverage() + Integer.parseInt(gfHome));
 		team2.setTotalGoalsAway(team2.getTotalGoalsAway() + Integer.parseInt(gfHome) + Integer.parseInt(gfAway));
 		team2.setTotalgoalsForAway(team2.getTotalgoalsForAway() + Integer.parseInt(gfAway));
-		team2.setTotalgoalsAverageAway(team2.getTotalgoalsAverageAway() + Integer.parseInt(gfHome));
-
-		if (team2.getMatches() != 0 && team2.getMatchesAway() !=0 ) {
-			// Team 2 Goals Avg
-			team2.setAvgGoals(team2.getTotalgoals() / team2.getMatches());
-			team2.setAvgGoalsFor(team2.getTotalgoalsFor() / team2.getMatches());
-			team2.setAvgGoalsAverage(team2.getTotalgoalsAverage() / team2.getMatches());
-			team2.setAvgGoalsAway(team2.getTotalGoalsHome() / team2.getMatchesAway());
-			team2.setAvgGoalsForAway(team2.getAvgGoalsForAway() / team2.getMatchesAway());
-			team2.setAvgGoalsAverageAway(team2.getAvgGoalsAverageAway() / team2.getMatchesAway());
-		}
-
-		else {
-
-			team2.setAvgGoals(0);
-			team2.setAvgGoalsFor(0);
-			team2.setAvgGoalsAverage(0);
-			team2.setAvgGoalsHome(0);
-			team2.setAvgGoalsForHome(0);
-			team2.setAvgGoalsAverageHome(0);
-		}
+		team2.setTotalgoalsAverageAway(team2.getTotalgoalsAverageAway()+ Integer.parseInt(gfHome));
 
 		// Team 2 Overs
 		if ((Integer.parseInt(gfHome) + Integer.parseInt(gfAway)) > 1.5) {
 
-			team2.setAvgOver15(team2.getAvgOver15() + 1);
-			team2.setAvgOver15Home(team2.getAvgOver15Home() + 1);
+			team2.setOver15total(team1.getOver15total() + 1);
+			team2.setOver15home(team1.getOver15home() + 1);
 		}
 
 		if ((Integer.parseInt(gfHome) + Integer.parseInt(gfAway)) > 2.5) {
 
-			team2.setAvgOver25(team2.getAvgOver25() + 1);
-			team2.setAvgOver25Home(team2.getAvgOver25Home() + 1);
+			team2.setOver25total(team1.getOver25total() + 1);
+			team2.setOver25home(team1.getOver25home() + 1);
 		}
 
 		// Team 2
