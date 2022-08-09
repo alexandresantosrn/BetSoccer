@@ -6,26 +6,26 @@ public class Match {
 	Team awayTeam;
 	int homeScore;
 	int awayScore;
-	double avgGoalsTotalHome;
-	double avgGoalsTotalForHome;
-	double avgGoalsTotalAverageHome;
-	double avgGoalsHome;
-	double avgGoalsForHome;
-	double avgGoalsAgainstHome;
-	double avgGoalsTotalAway;
-	double avgGoalsTotalForAway;
-	double avgGoalsTotalAverageAway;
-	double avgGoalsAway;
-	double avgGoalsForAway;
-	double avgGoalsAgainstAway;
-	double avgGoals15HomeTotal;
-	double avgGoals15Home;
-	double avgGoals25HomeTotal;
-	double avgGoals25Home;
-	double avgGoals15AwayTotal;
-	double avgGoals15Away;
-	double avgGoals25AwayTotal;
-	double avgGoals25Away;
+	int GoalsTotalHome;
+	int GoalsTotalForHome;
+	int GoalsTotalAverageHome;
+	int GoalsHome;
+	int GoalsForHome;
+	int GoalsAgainstHome;
+	int GoalsTotalAway;
+	int GoalsTotalForAway;
+	int GoalsTotalAverageAway;
+	int GoalsAway;
+	int GoalsForAway;
+	int GoalsAgainstAway;
+	int Goals15HomeTotal;
+	int Goals15Home;
+	int Goals25HomeTotal;
+	int Goals25Home;
+	int Goals15AwayTotal;
+	int Goals15Away;
+	int Goals25AwayTotal;
+	int Goals25Away;
 
 	public Team getHomeTeam() {
 		return homeTeam;
@@ -59,164 +59,164 @@ public class Match {
 		this.awayScore = awayScore;
 	}
 
-	public double getAvgGoalsTotalHome() {
-		return avgGoalsTotalHome;
+	public int getGoalsTotalHome() {
+		return GoalsTotalHome;
 	}
 
-	public void setAvgGoalsTotalHome(double avgGoalsTotalHome) {
-		this.avgGoalsTotalHome = avgGoalsTotalHome;
+	public void setGoalsTotalHome(int goalsTotalHome) {
+		GoalsTotalHome = goalsTotalHome;
 	}
 
-	public double getAvgGoalsTotalForHome() {
-		return avgGoalsTotalForHome;
+	public int getGoalsTotalForHome() {
+		return GoalsTotalForHome;
 	}
 
-	public void setAvgGoalsTotalForHome(double avgGoalsTotalForHome) {
-		this.avgGoalsTotalForHome = avgGoalsTotalForHome;
+	public void setGoalsTotalForHome(int goalsTotalForHome) {
+		GoalsTotalForHome = goalsTotalForHome;
 	}
 
-	public double getAvgGoalsTotalAverageHome() {
-		return avgGoalsTotalAverageHome;
+	public int getGoalsTotalAverageHome() {
+		return GoalsTotalAverageHome;
 	}
 
-	public void setAvgGoalsTotalAverageHome(double avgGoalsTotalAverageHome) {
-		this.avgGoalsTotalAverageHome = avgGoalsTotalAverageHome;
+	public void setGoalsTotalAverageHome(int goalsTotalAverageHome) {
+		GoalsTotalAverageHome = goalsTotalAverageHome;
 	}
 
-	public double getAvgGoalsHome() {
-		return avgGoalsHome;
+	public int getGoalsHome() {
+		return GoalsHome;
 	}
 
-	public void setAvgGoalsHome(double avgGoalsHome) {
-		this.avgGoalsHome = avgGoalsHome;
+	public void setGoalsHome(int goalsHome) {
+		GoalsHome = goalsHome;
 	}
 
-	public double getAvgGoalsForHome() {
-		return avgGoalsForHome;
+	public int getGoalsForHome() {
+		return GoalsForHome;
 	}
 
-	public void setAvgGoalsForHome(double avgGoalsForHome) {
-		this.avgGoalsForHome = avgGoalsForHome;
+	public void setGoalsForHome(int goalsForHome) {
+		GoalsForHome = goalsForHome;
 	}
 
-	public double getAvgGoalsAgainstHome() {
-		return avgGoalsAgainstHome;
+	public int getGoalsAgainstHome() {
+		return GoalsAgainstHome;
 	}
 
-	public void setAvgGoalsAgainstHome(double avgGoalsAgainstHome) {
-		this.avgGoalsAgainstHome = avgGoalsAgainstHome;
+	public void setGoalsAgainstHome(int goalsAgainstHome) {
+		GoalsAgainstHome = goalsAgainstHome;
 	}
 
-	public double getAvgGoalsTotalAway() {
-		return avgGoalsTotalAway;
+	public int getGoalsTotalAway() {
+		return GoalsTotalAway;
 	}
 
-	public void setAvgGoalsTotalAway(double avgGoalsTotalAway) {
-		this.avgGoalsTotalAway = avgGoalsTotalAway;
+	public void setGoalsTotalAway(int goalsTotalAway) {
+		GoalsTotalAway = goalsTotalAway;
 	}
 
-	public double getAvgGoalsTotalForAway() {
-		return avgGoalsTotalForAway;
+	public int getGoalsTotalForAway() {
+		return GoalsTotalForAway;
 	}
 
-	public void setAvgGoalsTotalForAway(double avgGoalsTotalForAway) {
-		this.avgGoalsTotalForAway = avgGoalsTotalForAway;
+	public void setGoalsTotalForAway(int goalsTotalForAway) {
+		GoalsTotalForAway = goalsTotalForAway;
 	}
 
-	public double getAvgGoalsTotalAverageAway() {
-		return avgGoalsTotalAverageAway;
+	public int getGoalsTotalAverageAway() {
+		return GoalsTotalAverageAway;
 	}
 
-	public void setAvgGoalsTotalAverageAway(double avgGoalsTotalAverageAway) {
-		this.avgGoalsTotalAverageAway = avgGoalsTotalAverageAway;
+	public void setGoalsTotalAverageAway(int goalsTotalAverageAway) {
+		GoalsTotalAverageAway = goalsTotalAverageAway;
 	}
 
-	public double getAvgGoalsAway() {
-		return avgGoalsAway;
+	public int getGoalsAway() {
+		return GoalsAway;
 	}
 
-	public void setAvgGoalsAway(double avgGoalsAway) {
-		this.avgGoalsAway = avgGoalsAway;
+	public void setGoalsAway(int goalsAway) {
+		GoalsAway = goalsAway;
 	}
 
-	public double getAvgGoalsForAway() {
-		return avgGoalsForAway;
+	public int getGoalsForAway() {
+		return GoalsForAway;
 	}
 
-	public void setAvgGoalsForAway(double avgGoalsForAway) {
-		this.avgGoalsForAway = avgGoalsForAway;
+	public void setGoalsForAway(int goalsForAway) {
+		GoalsForAway = goalsForAway;
 	}
 
-	public double getAvgGoalsAgainstAway() {
-		return avgGoalsAgainstAway;
+	public int getGoalsAgainstAway() {
+		return GoalsAgainstAway;
 	}
 
-	public void setAvgGoalsAgainstAway(double avgGoalsAgainstAway) {
-		this.avgGoalsAgainstAway = avgGoalsAgainstAway;
+	public void setGoalsAgainstAway(int goalsAgainstAway) {
+		GoalsAgainstAway = goalsAgainstAway;
 	}
 
-	public double getAvgGoals15HomeTotal() {
-		return avgGoals15HomeTotal;
+	public int getGoals15HomeTotal() {
+		return Goals15HomeTotal;
 	}
 
-	public void setAvgGoals15HomeTotal(double avgGoals15HomeTotal) {
-		this.avgGoals15HomeTotal = avgGoals15HomeTotal;
+	public void setGoals15HomeTotal(int goals15HomeTotal) {
+		Goals15HomeTotal = goals15HomeTotal;
 	}
 
-	public double getAvgGoals15Home() {
-		return avgGoals15Home;
+	public int getGoals15Home() {
+		return Goals15Home;
 	}
 
-	public void setAvgGoals15Home(double avgGoals15Home) {
-		this.avgGoals15Home = avgGoals15Home;
+	public void setGoals15Home(int goals15Home) {
+		Goals15Home = goals15Home;
 	}
 
-	public double getAvgGoals25HomeTotal() {
-		return avgGoals25HomeTotal;
+	public int getGoals25HomeTotal() {
+		return Goals25HomeTotal;
 	}
 
-	public void setAvgGoals25HomeTotal(double avgGoals25HomeTotal) {
-		this.avgGoals25HomeTotal = avgGoals25HomeTotal;
+	public void setGoals25HomeTotal(int goals25HomeTotal) {
+		Goals25HomeTotal = goals25HomeTotal;
 	}
 
-	public double getAvgGoals25Home() {
-		return avgGoals25Home;
+	public int getGoals25Home() {
+		return Goals25Home;
 	}
 
-	public void setAvgGoals25Home(double avgGoals25Home) {
-		this.avgGoals25Home = avgGoals25Home;
+	public void setGoals25Home(int goals25Home) {
+		Goals25Home = goals25Home;
 	}
 
-	public double getAvgGoals15AwayTotal() {
-		return avgGoals15AwayTotal;
+	public int getGoals15AwayTotal() {
+		return Goals15AwayTotal;
 	}
 
-	public void setAvgGoals15AwayTotal(double avgGoals15AwayTotal) {
-		this.avgGoals15AwayTotal = avgGoals15AwayTotal;
+	public void setGoals15AwayTotal(int goals15AwayTotal) {
+		Goals15AwayTotal = goals15AwayTotal;
 	}
 
-	public double getAvgGoals15Away() {
-		return avgGoals15Away;
+	public int getGoals15Away() {
+		return Goals15Away;
 	}
 
-	public void setAvgGoals15Away(double avgGoals15Away) {
-		this.avgGoals15Away = avgGoals15Away;
+	public void setGoals15Away(int goals15Away) {
+		Goals15Away = goals15Away;
 	}
 
-	public double getAvgGoals25AwayTotal() {
-		return avgGoals25AwayTotal;
+	public int getGoals25AwayTotal() {
+		return Goals25AwayTotal;
 	}
 
-	public void setAvgGoals25AwayTotal(double avgGoals25AwayTotal) {
-		this.avgGoals25AwayTotal = avgGoals25AwayTotal;
+	public void setGoals25AwayTotal(int goals25AwayTotal) {
+		Goals25AwayTotal = goals25AwayTotal;
 	}
 
-	public double getAvgGoals25Away() {
-		return avgGoals25Away;
+	public int getGoals25Away() {
+		return Goals25Away;
 	}
 
-	public void setAvgGoals25Away(double avgGoals25Away) {
-		this.avgGoals25Away = avgGoals25Away;
+	public void setGoals25Away(int goals25Away) {
+		Goals25Away = goals25Away;
 	}
 
 }
