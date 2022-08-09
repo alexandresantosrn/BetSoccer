@@ -140,38 +140,38 @@ public class MainControl {
 		match.setAwayScore(Integer.parseInt(gfAway));
 
 		// Basic Team1
-		match.setAvgGoalsTotalHome(team1.getAvgGoals());
-		match.setAvgGoalsTotalForHome(team1.getAvgGoalsFor());
-		match.setAvgGoalsTotalAverageHome(team1.getAvgGoalsAverage());
+		match.setGoalsTotalHome(team1.getTotalgoals());
+		match.setGoalsTotalForHome(team1.getTotalgoalsFor());
+		match.setGoalsTotalAverageHome(team1.getTotalgoalsAverage());
 
 		// Basic Team2
-		match.setAvgGoalsTotalAway(team2.getAvgGoals());
-		match.setAvgGoalsTotalForAway(team2.getAvgGoalsFor());
-		match.setAvgGoalsTotalAverageAway(team2.getAvgGoalsAverage());
+		match.setGoalsTotalAway(team2.getTotalgoals());
+		match.setGoalsTotalForAway(team2.getTotalgoalsFor());
+		match.setGoalsTotalAverageAway(team2.getTotalgoalsAverage());
 
 		// Team1 Goals
-		match.setAvgGoalsHome(team1.getAvgGoalsHome());
-		match.setAvgGoalsForHome(team1.getAvgGoalsForHome());
-		match.setAvgGoalsAgainstHome(team1.getAvgGoalsAverageHome());
+		match.setGoalsHome(team1.getTotalGoalsHome());
+		match.setGoalsForHome(team1.getTotalgoalsForHome());
+		match.setGoalsAgainstHome(team1.getTotalgoalsAverageHome());
 
 		// Team2 Goals
-		match.setAvgGoalsAway(team1.getAvgGoalsAway());
-		match.setAvgGoalsForAway(team1.getAvgGoalsForAway());
-		match.setAvgGoalsAgainstAway(team1.getAvgGoalsAverageAway());
+		match.setGoalsAway(team1.getTotalGoalsAway());
+		match.setGoalsForAway(team1.getTotalgoalsForAway());
+		match.setGoalsAgainstAway(team1.getTotalgoalsAverageAway());
 
 		// Updating 1.5 Goals
-		match.setAvgGoals15HomeTotal(team1.getAvgOver15());
-		match.setAvgGoals15Home(team1.getAvgOver15Home());
+		match.setGoals15HomeTotal(team1.getOver15total());
+		match.setGoals15Home(team1.getOver15home());
 
-		match.setAvgGoals15AwayTotal(team2.getAvgOver15());
-		match.setAvgGoals15Away(team2.getAvgOver15Away());
+		match.setGoals15AwayTotal(team2.getOver15total());
+		match.setGoals15Away(team2.getOver15away());
 
 		// Updating 2.5 Goals
-		match.setAvgGoals25HomeTotal(team1.getAvgOver25());
-		match.setAvgGoals25Home(team1.getAvgOver25Home());
+		match.setGoals25HomeTotal(team1.getOver25total());
+		match.setGoals25Home(team1.getOver25home());
 
-		match.setAvgGoals25AwayTotal(team2.getAvgOver25());
-		match.setAvgGoals25Away(team2.getAvgOver25Away());
+		match.setGoals25AwayTotal(team2.getOver25total());
+		match.setGoals25Away(team2.getOver25away());
 
 		// Updating teams
 
@@ -245,29 +245,29 @@ public class MainControl {
 		recordingFile.printf(";");
 		recordingFile.printf("PlacarFora");
 		recordingFile.printf(";");
-		recordingFile.printf("MediaTotalCasa");
+		recordingFile.printf("TotalCasa");
 		recordingFile.printf(";");
-		recordingFile.printf("MediaTotalProCasa");
+		recordingFile.printf("TotalProCasa");
 		recordingFile.printf(";");
-		recordingFile.printf("MediaTotalContraCasa");
+		recordingFile.printf("TotalContraCasa");
 		recordingFile.printf(";");
-		recordingFile.printf("MediaTotalEmCasa");
+		recordingFile.printf("TotalEmCasa");
 		recordingFile.printf(";");
-		recordingFile.printf("MediaTotalProEmCasa");
+		recordingFile.printf("TotalProEmCasa");
 		recordingFile.printf(";");
-		recordingFile.printf("MediaTotalContraEmCasa");
+		recordingFile.printf("TotalContraEmCasa");
 		recordingFile.printf(";");
-		recordingFile.printf("MediaTotalFora");
+		recordingFile.printf("TotalFora");
 		recordingFile.printf(";");
-		recordingFile.printf("MediaTotalProFora");
+		recordingFile.printf("TotalProFora");
 		recordingFile.printf(";");
-		recordingFile.printf("MediaTotalContraFora");
+		recordingFile.printf("TotalContraFora");
 		recordingFile.printf(";");
-		recordingFile.printf("MediaTotalEmFora");
+		recordingFile.printf("TotalEmFora");
 		recordingFile.printf(";");
-		recordingFile.printf("MediaTotalProEmFora");
+		recordingFile.printf("TotalProEmFora");
 		recordingFile.printf(";");
-		recordingFile.printf("MediaTotalContraEmFora");
+		recordingFile.printf("TotalContraEmFora");
 		recordingFile.printf(";");
 		recordingFile.printf("Total15Casa");
 		recordingFile.printf(";");
@@ -296,45 +296,45 @@ public class MainControl {
 			recordingFile.print(";");
 			recordingFile.print(match.getAwayScore());
 			recordingFile.print(";");
-			recordingFile.print(match.getAvgGoalsTotalHome());
+			recordingFile.print(match.getGoalsTotalHome());
 			recordingFile.print(";");
-			recordingFile.print(match.getAvgGoalsTotalForHome());
+			recordingFile.print(match.getGoalsTotalForHome());
 			recordingFile.print(";");
-			recordingFile.print(match.getAvgGoalsTotalAverageHome());
+			recordingFile.print(match.getGoalsTotalAverageHome());
 			recordingFile.print(";");
-			recordingFile.print(match.getAvgGoalsHome());
+			recordingFile.print(match.getGoalsHome());
 			recordingFile.print(";");
-			recordingFile.print(match.getAvgGoalsForHome());
+			recordingFile.print(match.getGoalsForHome());
 			recordingFile.print(";");
-			recordingFile.print(match.getAvgGoalsAgainstHome());
+			recordingFile.print(match.getGoalsAgainstHome());
 			recordingFile.print(";");
-			recordingFile.print(match.getAvgGoalsTotalAway());
+			recordingFile.print(match.getGoalsTotalAway());
 			recordingFile.print(";");
-			recordingFile.print(match.getAvgGoalsTotalForAway());
+			recordingFile.print(match.getGoalsTotalForAway());
 			recordingFile.print(";");
-			recordingFile.print(match.getAvgGoalsTotalAverageAway());
+			recordingFile.print(match.getGoalsTotalAverageAway());
 			recordingFile.print(";");
-			recordingFile.print(match.getAvgGoalsAway());
+			recordingFile.print(match.getGoalsAway());
 			recordingFile.print(";");
-			recordingFile.print(match.getAvgGoalsForAway());
+			recordingFile.print(match.getGoalsForAway());
 			recordingFile.print(";");
-			recordingFile.print(match.getAvgGoalsAgainstAway());
+			recordingFile.print(match.getGoalsAgainstAway());
 			recordingFile.print(";");
-			recordingFile.print(match.getAvgGoals15HomeTotal());
+			recordingFile.print(match.getGoals15HomeTotal());
 			recordingFile.print(";");
-			recordingFile.print(match.getAvgGoals15Home());
+			recordingFile.print(match.getGoals15Home());
 			recordingFile.print(";");
-			recordingFile.print(match.getAvgGoals25HomeTotal());
+			recordingFile.print(match.getGoals25HomeTotal());
 			recordingFile.print(";");
-			recordingFile.print(match.getAvgGoals25Home());
+			recordingFile.print(match.getGoals25Home());
 			recordingFile.print(";");
-			recordingFile.print(match.getAvgGoals15AwayTotal());
+			recordingFile.print(match.getGoals15AwayTotal());
 			recordingFile.print(";");
-			recordingFile.print(match.getAvgGoals15Away());
+			recordingFile.print(match.getGoals15Away());
 			recordingFile.print(";");
-			recordingFile.print(match.getAvgGoals25AwayTotal());
+			recordingFile.print(match.getGoals25AwayTotal());
 			recordingFile.print(";");
-			recordingFile.println(match.getAvgGoals25Away());
+			recordingFile.println(match.getGoals25Away());
 		}
 
 		file.close();
