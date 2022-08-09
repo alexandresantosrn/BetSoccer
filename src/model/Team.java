@@ -14,28 +14,12 @@ public class Team {
 	int totalgoalsAverageHome;
 	int totalGoalsAway;
 	int totalgoalsForAway;
-	int totalgoalsAverageAway;
-	double avgGoals;
-	double avgGoalsFor;
-	double avgGoalsAverage;
-	double avgGoalsHome;
-	double avgGoalsForHome;
-	double avgGoalsAverageHome;
-	double avgGoalsAway;
-	double avgGoalsForAway;
-	double avgGoalsAverageAway;
 	int over15total;
 	int over25total;
 	int over15home;
 	int over15away;
 	int over25home;
 	int over25away;
-	double avgOver15;
-	double avgOver25;
-	double avgOver15Home;
-	double avgOver15Away;
-	double avgOver25Home;
-	double avgOver25Away;
 
 	public String getName() {
 		return name;
@@ -133,86 +117,6 @@ public class Team {
 		this.totalgoalsForAway = totalgoalsForAway;
 	}
 
-	public int getTotalgoalsAverageAway() {
-		return totalgoalsAverageAway;
-	}
-
-	public void setTotalgoalsAverageAway(int totalgoalsAverageAway) {
-		this.totalgoalsAverageAway = totalgoalsAverageAway;
-	}
-
-	public double getAvgGoals() {
-		return avgGoals;
-	}
-
-	public void setAvgGoals(double avgGoals) {
-		this.avgGoals = avgGoals;
-	}
-
-	public double getAvgGoalsFor() {
-		return avgGoalsFor;
-	}
-
-	public void setAvgGoalsFor(double avgGoalsFor) {
-		this.avgGoalsFor = avgGoalsFor;
-	}
-
-	public double getAvgGoalsAverage() {
-		return avgGoalsAverage;
-	}
-
-	public void setAvgGoalsAverage(double avgGoalsAverage) {
-		this.avgGoalsAverage = avgGoalsAverage;
-	}
-
-	public double getAvgGoalsHome() {
-		return avgGoalsHome;
-	}
-
-	public void setAvgGoalsHome(double avgGoalsHome) {
-		this.avgGoalsHome = avgGoalsHome;
-	}
-
-	public double getAvgGoalsForHome() {
-		return avgGoalsForHome;
-	}
-
-	public void setAvgGoalsForHome(double avgGoalsForHome) {
-		this.avgGoalsForHome = avgGoalsForHome;
-	}
-
-	public double getAvgGoalsAverageHome() {
-		return avgGoalsAverageHome;
-	}
-
-	public void setAvgGoalsAverageHome(double avgGoalsAverageHome) {
-		this.avgGoalsAverageHome = avgGoalsAverageHome;
-	}
-
-	public double getAvgGoalsAway() {
-		return avgGoalsAway;
-	}
-
-	public void setAvgGoalsAway(double avgGoalsAway) {
-		this.avgGoalsAway = avgGoalsAway;
-	}
-
-	public double getAvgGoalsForAway() {
-		return avgGoalsForAway;
-	}
-
-	public void setAvgGoalsForAway(double avgGoalsForAway) {
-		this.avgGoalsForAway = avgGoalsForAway;
-	}
-
-	public double getAvgGoalsAverageAway() {
-		return avgGoalsAverageAway;
-	}
-
-	public void setAvgGoalsAverageAway(double avgGoalsAverageAway) {
-		this.avgGoalsAverageAway = avgGoalsAverageAway;
-	}
-
 	public int getOver15total() {
 		return over15total;
 	}
@@ -259,54 +163,6 @@ public class Team {
 
 	public void setOver25away(int over25away) {
 		this.over25away = over25away;
-	}
-
-	public double getAvgOver15() {
-		return avgOver15;
-	}
-
-	public void setAvgOver15(double avgOver15) {
-		this.avgOver15 = avgOver15;
-	}
-
-	public double getAvgOver25() {
-		return avgOver25;
-	}
-
-	public void setAvgOver25(double avgOver25) {
-		this.avgOver25 = avgOver25;
-	}
-
-	public double getAvgOver15Home() {
-		return avgOver15Home;
-	}
-
-	public void setAvgOver15Home(double avgOver15Home) {
-		this.avgOver15Home = avgOver15Home;
-	}
-
-	public double getAvgOver15Away() {
-		return avgOver15Away;
-	}
-
-	public void setAvgOver15Away(double avgOver15Away) {
-		this.avgOver15Away = avgOver15Away;
-	}
-
-	public double getAvgOver25Home() {
-		return avgOver25Home;
-	}
-
-	public void setAvgOver25Home(double avgOver25Home) {
-		this.avgOver25Home = avgOver25Home;
-	}
-
-	public double getAvgOver25Away() {
-		return avgOver25Away;
-	}
-
-	public void setAvgOver25Away(double avgOver25Away) {
-		this.avgOver25Away = avgOver25Away;
 	}
 
 }
