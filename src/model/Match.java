@@ -6,6 +6,10 @@ public class Match {
 	Team awayTeam;
 	int homeScore;
 	int awayScore;
+	int totalmatchesHome;
+	int totalmatchesAway;
+	int matchesHome;
+	int matchesAway;
 	int GoalsTotalHome;
 	int GoalsTotalForHome;
 	int GoalsTotalAverageHome;
@@ -57,6 +61,38 @@ public class Match {
 
 	public void setAwayScore(int awayScore) {
 		this.awayScore = awayScore;
+	}
+
+	public int getTotalmatchesHome() {
+		return totalmatchesHome;
+	}
+
+	public void setTotalmatchesHome(int totalmatchesHome) {
+		this.totalmatchesHome = totalmatchesHome;
+	}
+
+	public int getTotalmatchesAway() {
+		return totalmatchesAway;
+	}
+
+	public void setTotalmatchesAway(int totalmatchesAway) {
+		this.totalmatchesAway = totalmatchesAway;
+	}
+
+	public int getMatchesHome() {
+		return matchesHome;
+	}
+
+	public void setMatchesHome(int matchesHome) {
+		this.matchesHome = matchesHome;
+	}
+
+	public int getMatchesAway() {
+		return matchesAway;
+	}
+
+	public void setMatchesAway(int matchesAway) {
+		this.matchesAway = matchesAway;
 	}
 
 	public int getGoalsTotalHome() {

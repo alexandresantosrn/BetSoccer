@@ -239,12 +239,20 @@ public class MainControl {
 		// First line
 		recordingFile.printf("Casa");
 		recordingFile.printf(";");
-		recordingFile.printf("Fora");
+		recordingFile.printf("Fora");		
 		recordingFile.printf(";");
 		recordingFile.printf("PlacarCasa");
 		recordingFile.printf(";");
 		recordingFile.printf("PlacarFora");
 		recordingFile.printf(";");
+		recordingFile.printf("PartidasCasa");
+		recordingFile.printf(";");
+		recordingFile.printf("PartidasFora");
+		recordingFile.printf(";");		
+		recordingFile.printf("PartidasEmCasa");
+		recordingFile.printf(";");
+		recordingFile.printf("PartidasEmFora");
+		recordingFile.printf(";");	
 		recordingFile.printf("TotalCasa");
 		recordingFile.printf(";");
 		recordingFile.printf("TotalProCasa");
