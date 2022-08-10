@@ -131,13 +131,19 @@ public class MainControl {
 		// Updating Matches
 
 		// Matches
-		Match match = new Match();
+		Match match = new Match();		
 
 		// Match
 		match.setHomeTeam(team1);
 		match.setAwayTeam(team2);
 		match.setHomeScore(Integer.parseInt(gfHome));
 		match.setAwayScore(Integer.parseInt(gfAway));
+		
+		// Updating Matches
+		match.setTotalmatchesHome(team1.getMatches());
+		match.setTotalmatchesAway(team2.getMatches());
+		match.setMatchesHome(team1.getMatchesHome());
+		match.setMatchesAway(team2.getMatchesAway());		
 
 		// Basic Team1
 		match.setGoalsTotalHome(team1.getTotalgoals());
@@ -178,6 +184,10 @@ public class MainControl {
 		// Team 1 Matches
 		team1.setMatches(team1.getMatches() + 1);
 		team1.setMatchesHome(team1.getMatchesHome() + 1);
+		
+		// Team 2 Matches
+		team2.setMatches(team2.getMatches() + 1);
+		team2.setMatchesAway(team2.getMatchesAway() + 1);
 
 		// Team 1 Goals
 		team1.setTotalgoals(team1.getTotalgoals() + Integer.parseInt(gfHome) + Integer.parseInt(gfAway));
@@ -221,9 +231,7 @@ public class MainControl {
 			team2.setOver25home(team1.getOver25home() + 1);
 		}
 
-		// Team 2
-		team2.setMatches(team2.getMatches() + 1);
-		team2.setMatchesAway(team2.getMatchesAway() + 1);
+	
 
 		repositorym.addMatch(match);
 	}
@@ -303,6 +311,14 @@ public class MainControl {
 			recordingFile.print(match.getHomeScore());
 			recordingFile.print(";");
 			recordingFile.print(match.getAwayScore());
+			recordingFile.print(";");
+			recordingFile.print(match.getTotalmatchesHome());
+			recordingFile.print(";");
+			recordingFile.print(match.getTotalmatchesAway());
+			recordingFile.print(";");
+			recordingFile.print(match.getMatchesHome());
+			recordingFile.print(";");
+			recordingFile.print(match.getMatchesAway());
 			recordingFile.print(";");
 			recordingFile.print(match.getGoalsTotalHome());
 			recordingFile.print(";");
