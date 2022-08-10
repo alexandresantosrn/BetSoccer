@@ -161,9 +161,9 @@ public class MainControl {
 		match.setGoalsAgainstHome(team1.getTotalgoalsAverageHome());
 
 		// Team2 Goals
-		match.setGoalsAway(team1.getTotalGoalsAway());
-		match.setGoalsForAway(team1.getTotalgoalsForAway());
-		match.setGoalsAgainstAway(team1.getTotalgoalsAverageAway());
+		match.setGoalsAway(team2.getTotalGoalsAway());
+		match.setGoalsForAway(team2.getTotalgoalsForAway());
+		match.setGoalsAgainstAway(team2.getTotalgoalsAverageAway());
 
 		// Updating 1.5 Goals
 		match.setGoals15HomeTotal(team1.getOver15total());
@@ -221,14 +221,14 @@ public class MainControl {
 		// Team 2 Overs
 		if ((Integer.parseInt(gfHome) + Integer.parseInt(gfAway)) > 1.5) {
 
-			team2.setOver15total(team1.getOver15total() + 1);
-			team2.setOver15home(team1.getOver15home() + 1);
+			team2.setOver15total(team2.getOver15total() + 1);
+			team2.setOver15away(team2.getOver15away() + 1);
 		}
 
 		if ((Integer.parseInt(gfHome) + Integer.parseInt(gfAway)) > 2.5) {
 
-			team2.setOver25total(team1.getOver25total() + 1);
-			team2.setOver25home(team1.getOver25home() + 1);
+			team2.setOver25total(team2.getOver25total() + 1);
+			team2.setOver25away(team2.getOver25away() + 1);
 		}
 
 		repositorym.addMatch(match);
