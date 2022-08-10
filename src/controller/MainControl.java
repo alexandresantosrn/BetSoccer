@@ -131,19 +131,19 @@ public class MainControl {
 		// Updating Matches
 
 		// Matches
-		Match match = new Match();		
+		Match match = new Match();
 
 		// Match
 		match.setHomeTeam(team1);
 		match.setAwayTeam(team2);
 		match.setHomeScore(Integer.parseInt(gfHome));
 		match.setAwayScore(Integer.parseInt(gfAway));
-		
+
 		// Updating Matches
 		match.setTotalmatchesHome(team1.getMatches());
 		match.setTotalmatchesAway(team2.getMatches());
 		match.setMatchesHome(team1.getMatchesHome());
-		match.setMatchesAway(team2.getMatchesAway());		
+		match.setMatchesAway(team2.getMatchesAway());
 
 		// Basic Team1
 		match.setGoalsTotalHome(team1.getTotalgoals());
@@ -184,7 +184,7 @@ public class MainControl {
 		// Team 1 Matches
 		team1.setMatches(team1.getMatches() + 1);
 		team1.setMatchesHome(team1.getMatchesHome() + 1);
-		
+
 		// Team 2 Matches
 		team2.setMatches(team2.getMatches() + 1);
 		team2.setMatchesAway(team2.getMatchesAway() + 1);
@@ -216,7 +216,7 @@ public class MainControl {
 		team2.setTotalgoalsAverage(team2.getTotalgoalsAverage() + Integer.parseInt(gfHome));
 		team2.setTotalGoalsAway(team2.getTotalGoalsAway() + Integer.parseInt(gfHome) + Integer.parseInt(gfAway));
 		team2.setTotalgoalsForAway(team2.getTotalgoalsForAway() + Integer.parseInt(gfAway));
-		team2.setTotalgoalsAverageAway(team2.getTotalgoalsAverageAway()+ Integer.parseInt(gfHome));
+		team2.setTotalgoalsAverageAway(team2.getTotalgoalsAverageAway() + Integer.parseInt(gfHome));
 
 		// Team 2 Overs
 		if ((Integer.parseInt(gfHome) + Integer.parseInt(gfAway)) > 1.5) {
@@ -230,8 +230,6 @@ public class MainControl {
 			team2.setOver25total(team1.getOver25total() + 1);
 			team2.setOver25home(team1.getOver25home() + 1);
 		}
-
-	
 
 		repositorym.addMatch(match);
 	}
@@ -247,7 +245,7 @@ public class MainControl {
 		// First line
 		recordingFile.printf("Casa");
 		recordingFile.printf(";");
-		recordingFile.printf("Fora");		
+		recordingFile.printf("Fora");
 		recordingFile.printf(";");
 		recordingFile.printf("PlacarCasa");
 		recordingFile.printf(";");
@@ -256,11 +254,11 @@ public class MainControl {
 		recordingFile.printf("PartidasCasa");
 		recordingFile.printf(";");
 		recordingFile.printf("PartidasFora");
-		recordingFile.printf(";");		
+		recordingFile.printf(";");
 		recordingFile.printf("PartidasEmCasa");
 		recordingFile.printf(";");
 		recordingFile.printf("PartidasEmFora");
-		recordingFile.printf(";");	
+		recordingFile.printf(";");
 		recordingFile.printf("TotalCasa");
 		recordingFile.printf(";");
 		recordingFile.printf("TotalProCasa");
