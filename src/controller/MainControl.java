@@ -29,9 +29,9 @@ public class MainControl {
 
 		System.out.println("Importando o caminho do arquivo...");
 
-		importLeague(path); // Importing league
-		importTeams(path); // Importing teams
-		importGames(path); // Importing games
+		importLeague(path); //Importing league
+		importTeams(path); //Importing teams
+		importGames(path); //Importing games
 	}
 
 	private static void importLeague(String path) throws IOException {
@@ -47,9 +47,9 @@ public class MainControl {
 
 		League league = new League(country, leagueName);
 
-		repositoryl.addLeague(league);
+		repositoryl.addLeague(league); //Add league to repository leagues
 
-		readingFile.close();
+		readingFile.close(); //Closing
 	}
 
 	private static void importTeams(String path) throws IOException {
@@ -59,7 +59,7 @@ public class MainControl {
 
 		String line = readingFile.readLine();
 
-		line = readingFile.readLine(); // Going to the second line
+		line = readingFile.readLine(); //Going to the second line
 
 		while (line != null) {
 
@@ -71,7 +71,7 @@ public class MainControl {
 			createTeam(home);
 			createTeam(away);
 
-			line = readingFile.readLine(); // Going to the next line
+			line = readingFile.readLine(); //Going to the next line
 		}
 
 		readingFile.close();
@@ -117,7 +117,7 @@ public class MainControl {
 
 			createMatch(home, away, gfHome, gfAway);
 
-			line = readingFile.readLine();
+			line = readingFile.readLine(); //Going to the next line
 		}
 
 		readingFile.close();
