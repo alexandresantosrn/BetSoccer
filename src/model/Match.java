@@ -30,7 +30,8 @@ public class Match {
 	int Goals15Away;
 	int Goals25AwayTotal;
 	int Goals25Away;
-	double avgGoals;
+	double avgGoalsHome;
+	double avgGoalsAway;
 
 	public Team getHomeTeam() {
 		return homeTeam;
@@ -256,12 +257,20 @@ public class Match {
 		Goals25Away = goals25Away;
 	}
 
-	public double getAvgGoals() {
-		return avgGoals;
+	public double getAvgGoalsHome() {
+		return avgGoalsHome;
 	}
 
-	public void setAvgGoals(double avgGoals) {
-		this.avgGoals = avgGoals;
+	public void setAvgGoalsHome(double avgGoalsHome) {
+		this.avgGoalsHome = avgGoalsHome;
+	}
+
+	public double getAvgGoalsAway() {
+		return avgGoalsAway;
+	}
+
+	public void setAvgGoalsAway(double avgGoalsAway) {
+		this.avgGoalsAway = avgGoalsAway;
 	}
 
 }
