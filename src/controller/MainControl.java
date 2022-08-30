@@ -198,7 +198,9 @@ public class MainControl {
 
 		else {
 			
-			match.setAvgGoalsHome(team1.getTotalgoals() / team1.getMatches());
+			float x = team1.getTotalgoals() / team1.getMatches();
+			System.out.println(x);					
+			match.setAvgGoalsHome(team1.getTotalgoals() / team1.getMatches());			
 			match.setAvgGoalsAway(team2.getTotalgoals() / team2.getMatches());
 		}
 
