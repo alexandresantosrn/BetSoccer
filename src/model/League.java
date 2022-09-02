@@ -7,7 +7,7 @@ public class League {
 	String name;
 	String country;
 	List<Match> matches;
-	
+
 	public League(String name, String country) {
 		super();
 		this.name = name;

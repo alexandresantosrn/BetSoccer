@@ -179,31 +179,6 @@ public class MainControl {
 		match.setGoals25AwayTotal(team2.getOver25total());
 		match.setGoals25Away(team2.getOver25away());
 
-		// Updating matches
-		if (team1.getMatches() == 0) {
-
-			match.setAvgGoalsHome(0);
-		}
-
-		else {
-
-			match.setAvgGoalsHome(team1.getTotalgoals() / team1.getMatches());
-			match.setAvgGoalsAway(team2.getTotalgoals() / team2.getMatches());
-		}
-
-		if (team2.getMatches() == 0) {
-
-			match.setAvgGoalsAway(0);
-		}
-
-		else {
-			
-			float x = team1.getTotalgoals() / team1.getMatches();
-			System.out.println(x);					
-			match.setAvgGoalsHome(team1.getTotalgoals() / team1.getMatches());			
-			match.setAvgGoalsAway(team2.getTotalgoals() / team2.getMatches());
-		}
-
 		// Updating teams
 
 		// Team 1 Matches
@@ -385,11 +360,7 @@ public class MainControl {
 			recordingFile.print(";");
 			recordingFile.print(match.getGoals25AwayTotal());
 			recordingFile.print(";");
-			recordingFile.print(match.getGoals25Away());
-			recordingFile.print(";");
-			recordingFile.print(match.getAvgGoalsHome());
-			recordingFile.print(";");
-			recordingFile.println(match.getAvgGoalsAway());
+			recordingFile.println(match.getGoals25Away());		
 		}
 
 		file.close();
